@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 {% load static %}
 
 {% block content %}
@@ -60,19 +62,24 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
+								<form method="post" >
+									{% csrf_token %}
+									
 									<div class="fields">
 										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											{{ form.name.label_tag }}
+											{{ form.name.errors }}
+											{{ form.name }}
 										</div>
 										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											{{ form.email.label_tag }}
+											{{ form.email.errors }}
+											{{ form.email }}
 										</div>
 										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
+											{{ form.message.label_tag }}
+											{{ form.message.errors }}
+											{{ form.message }}
 										</div>
 									</div>
 									<ul class="actions">
@@ -278,17 +285,20 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 									</ul>
 								</section>
 
-								<section>
+								<!-- <section>
 									<h3 class="major">Form</h3>
-									<form method="post" action="#">
+
+								<form name = "form" method = "POST" >
+
+									{% csrf_token %}
+
+										
 										<div class="fields">
 											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+												{{ form.name }}
 											</div>
 											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+												{{ form.email }}
 											</div>
 											<div class="field">
 												<label for="demo-category">Category</label>
@@ -317,16 +327,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 												<label for="demo-human">Not a robot</label>
 											</div>
 											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+												{{ form.message }}
 											</div>
+											
+
 										</div>
 										<ul class="actions">
 											<li><input type="submit" value="Send Message" class="primary" /></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
 									</form>
-								</section>
+								</section> -->
 
 							</article>
 
