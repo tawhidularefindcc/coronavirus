@@ -1,5 +1,12 @@
+
+
 @import url(fontawesome-all.min.css);
+
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+
+@import url('https://fonts.maateen.me/adorsho-lipi/font.css');
+
+
 
 /*
 	Dimension by HTML5 UP
@@ -141,7 +148,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #ffffff;
-		font-family: "Source Sans Pro", sans-serif;
+		font-family: "Source Sans Pro", sans-serif,'AdorshoLipi' !important;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
@@ -1140,9 +1147,12 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
 		}
 
@@ -1363,6 +1373,7 @@ input, select, textarea {
 					letter-spacing: 0.2rem;
 					font-size: 0.8rem;
 					border-bottom: 0;
+					font-family: AdorshoLipi !important;
 				}
 
 					#header nav ul li a:hover {
@@ -1656,3 +1667,12 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+		.notification{
+			position: absolute;
+			top: 3rem;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -50%) 
+		
+	}
