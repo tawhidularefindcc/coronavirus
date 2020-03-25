@@ -13,6 +13,10 @@ whitenoise==5.0.1
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 wincertstore==0.2
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes

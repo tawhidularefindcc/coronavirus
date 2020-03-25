@@ -35,7 +35,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -85,8 +84,8 @@ WSGI_APPLICATION = 'coresite.wsgi.application'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'ospbangla@gmail.com'
-EMAIL_HOST_PASSWORD = 'sjynfzpccdcwvspc'
+EMAIL_HOST_USER = 'jubel8180@gmail.com'
+EMAIL_HOST_PASSWORD = 'bidzfywsgtwlbiad'
 EMAIL_PORT = 587
 
 # Database
@@ -143,10 +142,14 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
 django_heroku.settings(locals())
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'ospbangla@gmail.com'
+# EMAIL_HOST_PASSWORD = 'sjynfzpccdcwvspc'
+# EMAIL_PORT = 587

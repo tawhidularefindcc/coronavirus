@@ -31,8 +31,9 @@ def emailView(request):
                     return HttpResponse('Invalid header found.')
                 return redirect('success')
             return HttpResponse('Make sure all fields are entered and valid.')
+    form = ContactForm()
+    return render(request, "form.html",{'form': form})
 
-    return render(request, "index.html",{'form': form})
 
 def successView(request):
     return HttpResponse('Success! Thank you for your message.')

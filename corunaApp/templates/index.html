@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+
+{% load crispy_forms_tags %} 
 
 {% load static %}
 
@@ -64,12 +65,15 @@
 								<h2 class="major">Contact</h2>
 								<form method="post" >
 									{% csrf_token %}
+
+									{{form.as_p}}
 									
 									<div class="fields">
 										<div class="field half">
 											{{ form.name.label_tag }}
 											{{ form.name.errors }}
 											{{ form.name }}
+									
 										</div>
 										<div class="field half">
 											{{ form.email.label_tag }}
