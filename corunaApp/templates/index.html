@@ -27,7 +27,7 @@
 								<li><a href="#intro">করোনা কি</a></li>
 								<li><a href="#work">আমাদের কাজ</a></li>
 								<li><a href="#about">আমরা কারা</a></li>
-								<li><a href="#contact">যোগাযোগ</a></li>
+								<li><a href="{% url 'email' %}#contact">যোগাযোগ</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
@@ -84,11 +84,9 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" >
+								<form method="POST" novalidate >
 									{% csrf_token %}
 
-									{{form.as_p}}
-									
 									<div class="fields">
 										<div class="field half">
 											{{ form.name.label_tag }}

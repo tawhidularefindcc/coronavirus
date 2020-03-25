@@ -13,9 +13,7 @@ def index(request):
 
 
 def emailView(request):
-    if request.method == 'GET':
-        form = ContactForm()
-    else:
+    if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid(): 
             name = form.cleaned_data['name']
@@ -31,8 +29,9 @@ def emailView(request):
                     return HttpResponse('Invalid header found.')
                 return redirect('success')
             return HttpResponse('Make sure all fields are entered and valid.')
-    form = ContactForm()
-    return render(request, "form.html",{'form': form})
+    else:
+        form = ContactForm()
+    return render(request, 'index.html', {'form': form})
 
 
 def successView(request):
