@@ -86,8 +86,7 @@ WSGI_APPLICATION = 'coresite.wsgi.application'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'ospbangla@gmail.com'
-EMAIL_HOST_PASSWORD = 'sjynfzpccdcwvspc
-'
+EMAIL_HOST_PASSWORD = 'sjynfzpccdcwvspc'
 EMAIL_PORT = 587
 
 # Database
