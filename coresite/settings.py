@@ -85,9 +85,10 @@ WSGI_APPLICATION = 'coresite.wsgi.application'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'jubel8180@gmail.com'
-EMAIL_HOST_PASSWORD = 'bidzfywsgtwlbiad'
+EMAIL_HOST_USER = 'ospbangla@gmail.com'
+EMAIL_HOST_PASSWORD = 'sjynfzpccdcwvspc'
 EMAIL_PORT = 587
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -161,8 +162,5 @@ MESSAGE_TAGS = {
 
 MESSAGE_LEVEL = 25
 
-# EMAIL_USE_TLS = True
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'ospbangla@gmail.com'
-# EMAIL_HOST_PASSWORD = 'sjynfzpccdcwvspc'
-# EMAIL_PORT = 587
+
+
