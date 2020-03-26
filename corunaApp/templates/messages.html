@@ -1,8 +1,8 @@
 
 {% if messages %}
     {% for message in messages %}
-        <div style="text-align: center;color:red;margin: auto;margin-top: 15px;background-color: white; width: 400px;"  class="alert {{ message.tags }} m-2 text-center" id="msg" role="alert">
-            {{ message }}
+        <div style="text-align: center;color:red;margin: auto;margin-top: 15px;background-color: rgb(248, 232, 6); "  class="alert {{ message.tags }} m-2 text-center" id="msg" role="alert">
+           <h3 style="padding: 5px;"> {{ message }} </h3>
         </div>
     {% endfor %}
 {% endif %} 
