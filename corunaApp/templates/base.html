@@ -7,10 +7,14 @@
     <title>করোনা ভাইরাস</title>
 
     <link rel="stylesheet" href="{% static  'corunaApp/css/main.css' %} " />
-	<noscript><link rel="stylesheet" href="{% static 'corunaApp/css/noscript.css' %}" /></noscript>
+    <noscript><link rel="stylesheet" href="{% static 'corunaApp/css/noscript.css' %}" /></noscript>
+    
 
 </head>
 <body>
+
+            {% include 'messages.html' %}
+
 
             {% block content %}
 
@@ -23,5 +27,22 @@
 			<script src="{% static 'corunaApp/js/util.js' %}"></script>
             <script src="{% static 'corunaApp/js/main.js' %}"></script>
 
+           
+            <script>
+             
+                    setTimeout(function(){
+                      if ($('#msg').length > 0) {
+                        $('#msg').remove();
+                      }
+                    }, 2500)
+           
+               
+            </script>
+
+
+           
+
 </body>
+
 </html>
+
