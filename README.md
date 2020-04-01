@@ -13,3 +13,11 @@ https://coronavirus-stagibg.herokuapp.com/
 
 #This is our live apps :
 https://coronavirusbd.herokuapp.com/
+
+# How to Run This project in your local machin :
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/93Kyxdic8rI/0.jpg)](https://www.youtube.com/watch?v=93Kyxdic8rI)
+
+
+
+
