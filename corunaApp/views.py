@@ -17,7 +17,7 @@ def index(request):
 def emailView(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        if form.is_valid(): 
+        if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
@@ -27,7 +27,7 @@ def emailView(request):
                 msg = 'Name : '+name + '\nEmail : ' + email + '\nMessage : '+message
 
                 try:
-                    send_mail(name, msg, email, ['jubel8180@gmail.com'],fail_silently=False)
+                    send_mail(name, msg, email, ['jubel8180@gmail.com','sushenbiswasaga@gmail.com'],fail_silently=False)
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
                 form = ContactForm()
