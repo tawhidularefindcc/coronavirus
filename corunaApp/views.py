@@ -45,6 +45,13 @@ def successView(request):
     return HttpResponse('Success! Thank you for your message.')
 
 
-def postView(request):
-    pass
+class PostView(ListView):
+    model = Post
+    context_object_name = 'post_list'
+    template_name = 'index.html'
+    paginate_by = 10
+    
+    def get_queryset(self):
+        return Post.objects.order_by('date')
+    
     

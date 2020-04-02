@@ -25,7 +25,7 @@ class PostAdmin(admin.ModelAdmin):
         # self.post_to_facebook(obj)
         super().save_model(request, obj, form, change)
         post_obj = Post.objects.latest('date')
-        self.post_to_facebook(post_obj)
+        # self.post_to_facebook(post_obj)
         
     def post_to_facebook(self,object):
         graph = facebook.GraphAPI(access_token=TOKEN)
