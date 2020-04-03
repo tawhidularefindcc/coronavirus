@@ -5,8 +5,9 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.conf import settings
 from django.contrib import messages
+from django.views.generic import ListView,DetailView
 
-
+from .models import Post
 
 # Create your views here.
 
@@ -42,3 +43,15 @@ def emailView(request):
 
 def successView(request):
     return HttpResponse('Success! Thank you for your message.')
+
+
+class PostView(ListView):
+    model = Post
+    context_object_name = 'post_list'
+    template_name = 'index.html'
+    paginate_by = 10
+    
+    def get_queryset(self):
+        return Post.objects.order_by('date')
+    
+    

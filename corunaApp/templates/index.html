@@ -9,7 +9,7 @@
 	<div class=" ">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" >
 
 				<!-- Header -->
 					<header id="header">
@@ -22,16 +22,18 @@
 								<span style="font-family: AdorshoLipi !important;">ঘরে থাকুন , সুস্থ থাকুন</span>
 							</div>
 						</div>
-						<nav>
+						<nav class="" style="background-color:  #1b1f22;width:100%;height:100%;">
 							<ul>
-								<li><a href="#intro">করোনা কি</a></li>
-								<li><a href="#work">আমাদের কাজ</a></li>
-								<li><a href="#about">আমরা কারা</a></li>
-								<li><a href="{% url 'email' %}#contact">যোগাযোগ</a></li>
+								<li ><a style="font-size:16px" href="#intro">করোনা কি</a></li>
+								<li><a style="font-size:16px" href="{% url 'news' %}#news">করোনা সংবাদ</a></li>
+								<li><a style="font-size:16px" href="#work">আমাদের কাজ</a></li>
+								<li><a style="font-size:16px" href="#about">আমরা কারা</a></li>
+								<li><a style="font-size:16px" href="{% url 'email' %}#contact">যোগাযোগ</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
 					</header>
+					
 
 				<!-- Main -->
 					<div id="main">
@@ -39,14 +41,14 @@
 						<!-- Intro -->
 							<article id="intro">
 
-								<h2 class="major">কেরানাভাইরাস  কি?</h2>
+								<h2 class="major">করোনাভাইরাস  কি?</h2>
 								<span class="image main"><img src="{% static 'corunaApp/images/pic01.jpg' %} " alt="" /></span>
 								<p>
-									কেরানাভাইরাস (SARS-CoV-2) ও কোভিড-১৯ কি?
+									করোনাভাইরাস (SARS-CoV-2) ও কোভিড-১৯ কি?
 
-									কেরানাভাইরাস (CoV) হোচ্ছে ভাইরাসগুলির এক বৃহৎ পরিবার যা সাধারণ সর্দি কাশি থেকে মারাত্মক অসুখ করতে পারে, যেমন (Middle East Respiratory Syndrome (MERSCoV), Severe Acute Respiratory Syndrome (SARS-CoV) এবং কোভিড ১৯ (COVID-19)। কেরানাভাইরাসের অনেক গুলো প্রজাতির মধ্যে ৭টি  মানবেদেহ রোগ সৃষ্টি করে, যার মাঝে SARS-CoV-2 অন্যতম।
+									করোনাভাইরাস (CoV) হোচ্ছে ভাইরাসগুলির এক বৃহৎ পরিবার যা সাধারণ সর্দি কাশি থেকে মারাত্মক অসুখ করতে পারে, যেমন (Middle East Respiratory Syndrome (MERSCoV), Severe Acute Respiratory Syndrome (SARS-CoV) এবং কোভিড ১৯ (COVID-19)। করোনাভাইরাসের অনেক গুলো প্রজাতির মধ্যে ৭টি  মানবেদেহ রোগ সৃষ্টি করে, যার মাঝে SARS-CoV-2 অন্যতম।
 
-									কেরানাভাইরাস গুলি জুলেটিন যার অর্থ প্রানীথেকে মানুষের মধ্যে সংক্রামন করতে পাড়ে ।
+									করোনাভাইরাস গুলি জুলেটিন যার অর্থ প্রানীথেকে মানুষের মধ্যে সংক্রামন করতে পাড়ে ।
 
 									COVID-19 নামক রোগ সৃস্টিকারি SARS-CoV-2 কেরানা ভাইরাস একটি নতুন প্রজাতির যা ইাতমধ্যে  মানব শরীের দেখা যায়নি। এটি একটি এনেভলপড,পজিটিভ সেন্স সিঙ্গেল স্ট্রান্ড আরএনএ ভাইরাস।
 
@@ -55,6 +57,94 @@
 								<p>
 									<a href="http://www.corona.gov.bd/documents/what-is-covid-19.pdf">বিস্তারিত</a>
 								</p>
+							</article>
+
+							<article id="news" style="width:900px">
+								<h2 class="major">করোনা সংবাদ</h2>
+								 {% if post_list %}
+								 <div class="row">
+									{% for post in post_list %}
+										<div class="col s12 ">
+											
+											{% if not post.image and not post.url %}
+											<div class="card " style="background-color: #1b1f22;">
+												<div class="card-content ">
+												  <h3 class="card-title orange-text">{{post.title}}</h3>
+												  <p class="white-text " style="padding: 2px;">{{post.description}}</p>
+												</div>
+												<div class="card-action" style="padding:5px;">
+													<small class="right-align">{{post.date}}</small>
+												  <!-- <a href="#">This is a link</a>
+												  <a href="#">This is a link</a> -->
+												</div> 
+											  </div>
+											{% elif post.image and  post.url %}
+											  
+											<div class="card horizontal" style="background-color: #1b1f22;">
+												<div class="card-stacked" style="width: 70%;">
+													<div class="card-content ">
+														<a style="text-decoration: underline ;" href="{{post.url}}"><h3 class="card-title orange-text">{{post.title}}</h3></a>
+														<p class="white-text " style="padding: 2px;">{{post.description}}</p>
+													  </div>
+													  <div class="card-action" style="padding:5px;">
+														  <small class="right-align">{{post.date}}</small>
+														<a style="margin-left: 20px;" href="{{post.url}}">Details</a>
+														<!-- <a href="#">This is a link</a> --> 
+													  </div>
+												</div> 
+											
+												<div class="card-image" style="width: 30%;">
+													<img class="" width="250px" height="250px" src="{{ post.image.url }}">
+												</div>
+											
+											  </div>
+												  
+
+											{% elif post.image and not post.url %}
+											<div class="card horizontal" style="background-color: #1b1f22;">
+												<div class="card-stacked" style="width: 70%;">
+													<div class="card-content ">
+														<h3 class="card-title orange-text">{{post.title}}</h3>
+														<p class="white-text " style="padding: 2px;">{{post.description}}</p>
+													  </div>
+													  <div class="card-action" style="padding:5px;">
+														  <small class="right-align">{{post.date}}</small>
+														
+														<!-- <a href="#">This is a link</a> --> 
+													  </div>
+												</div> 
+											
+												<div class="card-image" style="width: 30%;">
+													<img class="" width="250px" height="250px" src="{{ post.image.url }}">
+												</div>
+											
+											  </div>
+											{% elif not post.image and  post.url %}
+											
+											<div class="card horizontal" style="background-color: #1b1f22;">
+												<div class="card-stacked" style="width: 70%;">
+													<div class="card-content ">
+														<a style="text-decoration: underline ;" href="{{post.url}}"><h3 class="card-title orange-text">{{post.title}}</h3></a>
+														<p class="white-text " style="padding: 2px;">{{post.description}}</p>
+													  </div>
+													  <div class="card-action" style="padding:5px;">
+														  <small class="right-align">{{post.date}}</small>
+														<a style="margin-left: 20px;" href="{{post.url}}">Details</a>
+														<!-- <a href="#">This is a link</a> --> 
+														
+													  </div>
+												</div> 
+											
+											  </div>
+											{% endif %}
+											
+										</div>
+																			  
+									{% endfor %}
+								</div>
+								 {% else %}
+								 	<p>এখন ও কোন সংবাদ পাওয়া যায় নি</p>
+								 {% endif %}
 							</article>
 
 						<!-- Work -->
@@ -137,15 +227,17 @@
 									<h4>Blockquote</h4>
 									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
 									<h4>Preformatted</h4>
-									<pre><code>i = 0;
+									<pre><code>
+									i = 0;
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+									while (!deck.isInOrder()) {
+									print 'Iteration ' + i;
+									deck.shuffle();
+									i++;
+									}
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+									print 'It took ' + i + ' iterations to sort the deck.';
+									</code></pre>
 								</section>
 
 								<section>
@@ -369,7 +461,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</div>
 
 		<!-- BG -->
-			<div id="bg"></div>
+			<!-- <div id="bg"></div> -->
 
 
 

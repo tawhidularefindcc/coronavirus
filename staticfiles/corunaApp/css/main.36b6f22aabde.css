@@ -1,6 +1,6 @@
 
 
-@import url(fontawesome-all.min.css);
+@import url("fontawesome-all.min.7dd3499c32f8.css");
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
 
@@ -63,7 +63,7 @@ body {
 }
 
 mark {
-	background-color:#1b1f22 ;
+	background-color: ;
 	color: inherit;
 }
 
@@ -102,7 +102,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: black ;
+		background: #1b1f22 !important;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -655,7 +655,7 @@ input, select, textarea {
 
 		.image:before {
 			pointer-events: none;
-			background-image: url("../../images/overlay.png");
+			background-image: url("../../images/overlay.c2d2f4d92c31.png");
 			background-color: rgba(19, 21, 25, 0.5);
 			border-radius: 4px;
 			content: '';
@@ -1148,7 +1148,7 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
+			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.c2d2f4d92c31.png");
 			background-size: auto,
  256px 256px;
 			background-position: center,
@@ -1167,7 +1167,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/bg.jpg");
+			background-image: url("../../images/bg.336ebad27926.jpg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
