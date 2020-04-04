@@ -1,12 +1,12 @@
 from django.db import models
 
-from userApp.models import Users
+from userApp.models import UserProfile
 
 
 class Blog(models.Model):
-    created_by = models.ForeignKey(Users, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     title = models.CharField("Title", max_length=300)
-    fetured_img = models.ImageField(null=True, blank=True)
+    featured_img = models.ImageField(null=True, blank=True)
     description = models.TextField()
     blog_tag = models.ManyToManyField("Tag")
     created_date = models.DateTimeField(auto_now_add=True)

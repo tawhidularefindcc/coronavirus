@@ -161,3 +161,4 @@ MESSAGE_TAGS = {
 MESSAGE_LEVEL = 25
 
 
+AUTH_USER_MODEL = 'userApp.UserProfile'
