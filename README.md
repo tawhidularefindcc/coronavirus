@@ -50,6 +50,13 @@ https://github.com/sushen/coronavirus/
 Apps :
 https://coronavirusbd.herokuapp.com/coruna/
 
+Name : Jubel Ahmed
+
+Repo:
+https://github.com/jubelAhmed/coronavirus
+Apps:
+https://corunavirus19.herokuapp.com/coruna/
+
 
 
 
