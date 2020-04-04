@@ -45,8 +45,8 @@ https://coronavirusbd.herokuapp.com/
 
 
 Name : Sushen Biswas
-Repo:
-Apps :
+Repo: https://github.com/sushen/coronavirus/
+Apps :https://coronavirusbd.herokuapp.com/coruna/
 
 
 
