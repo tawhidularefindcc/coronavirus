@@ -1678,3 +1678,7 @@ input, select, textarea {
 			transform: translate(-50%, -50%) 
 		
 	}
+
+.message-box {
+    min-height: 150px;
+}
