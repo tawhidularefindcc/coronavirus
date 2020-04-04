@@ -2,12 +2,15 @@
 I hope this project bring the necessary need what we need to solve corona virus problem.
 
 This is the full documentation of our Project :
+
 https://coronavirus-1.gitbook.io/general-knowledge/
 
 #This is our bata apps:
+
 https://coronavirus-stagibg.herokuapp.com/
 
 #This is our live apps :
+
 https://coronavirusbd.herokuapp.com/
 
 # How to Run This project in your local machin :
@@ -41,8 +44,11 @@ https://coronavirusbd.herokuapp.com/
 
 
 Name : Sushen Biswas
-Repo: https://github.com/sushen/coronavirus/
-Apps :https://coronavirusbd.herokuapp.com/coruna/
+
+Repo: 
+https://github.com/sushen/coronavirus/
+Apps :
+https://coronavirusbd.herokuapp.com/coruna/
 
 
 
