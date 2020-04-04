@@ -25,6 +25,23 @@ https://coronavirusbd.herokuapp.com/
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-G4aiecSjAM/0.jpg)](https://www.youtube.com/watch?v=-G4aiecSjAM)
 
+# Our News Feture :##
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-G4aiecSjAM/0.jpg)](https://www.youtube.com/watch?v=-G4aiecSjAM)
+
+
+# Intro to our CSS :##
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-G4aiecSjAM/0.jpg)](https://www.youtube.com/watch?v=-G4aiecSjAM)
+
+# Heroku Migration : ##
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-G4aiecSjAM/0.jpg)](https://www.youtube.com/watch?v=-G4aiecSjAM)
+
+# Our Corona Statistic Feture :
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0jgYKA_r9a4/0.jpg)](https://www.youtube.com/watch?v=-0jgYKA_r9a4)
+
 
 # Our Curute : Write Your Name :
 
