@@ -1,30 +1,53 @@
 # coronavirus
 I hope this project bring the necessary need what we need to solve corona virus problem.
 
-#This is how you download it in your repo
-
-https://coronavirus-1.gitbook.io/general-knowledge/undefined-4/undefined/undefined
-
 This is the full documentation of our Project :
+
 https://coronavirus-1.gitbook.io/general-knowledge/
 
 #This is our bata apps:
+
 https://coronavirus-stagibg.herokuapp.com/
 
 #This is our live apps :
+
 https://coronavirusbd.herokuapp.com/
 
-# How to Run This project in your local machin :
+# All Video In the Youtube Playlist  :
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/93Kyxdic8rI/0.jpg)](https://www.youtube.com/watch?v=93Kyxdic8rI)
+[![Youtube Corona](https://user-images.githubusercontent.com/4492335/78470086-6ee3e080-7748-11ea-9a54-f224b28dc42d.png)](https://www.youtube.com/playlist?list=PLSQ_pVMGfBaPipBOXnCze267aS8EPxe8_)
 
-# Our Contact From Fiture :
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/4gCj9mV6yRc/0.jpg)](https://www.youtube.com/watch?v=4gCj9mV6yRc)
+1.  How to install coronavirus project
+2.  Add Contact From and Explain Pipline with Github
+3.  Our Blog Feture :
+4.  Our News Feture :
+5.  Intro to our CSS :
+6.  Heroku Migration : 
+7.  Our Corona Statistic Feture :
+8.  Our Curute : Write Your Name :
+9.  How We Solve Problem :
+10. Take all new files from Master Branch to the existing frocked Repository. :
+11. What is my understanding about opesscourch
+12. Opesscourch Project Responsibelity
+13. App Review Facebook Problem
 
-# Our Ci/Cd Process to maintain that Application :
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Uxhu11SNA2U/0.jpg)](https://www.youtube.com/watch?v=Uxhu11SNA2U)
+# Our team and There Apps  :
+
+Name : Sushen Biswas
+
+Repo: 
+https://github.com/sushen/coronavirus/
+Apps :
+https://coronavirusbd.herokuapp.com/coruna/
+
+Name : Jubel Ahmed
+
+Repo:
+https://github.com/jubelAhmed/coronavirus
+Apps:
+https://corunavirus19.herokuapp.com/coruna/
 
 
 
