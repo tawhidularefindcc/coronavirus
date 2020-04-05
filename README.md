@@ -28,8 +28,10 @@ https://coronavirusbd.herokuapp.com/
 8.  Our Curute : Write Your Name :
 9.  How We Solve Problem :
 10. Take all new files from Master Branch to the existing frocked Repository. :
-11.
-12.
+11. What is my understanding about opesscourch
+12. Opesscourch Project Responsibelity
+13. App Review Facebook Problem
+
 
 Name : Sushen Biswas
 
