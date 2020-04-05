@@ -15,50 +15,20 @@ https://coronavirusbd.herokuapp.com/
 
 # How to Run This project in your local machin :
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/93Kyxdic8rI/0.jpg)](https://www.youtube.com/watch?v=93Kyxdic8rI)
-
-# Our Contact From Fiture :
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/4gCj9mV6yRc/0.jpg)](https://www.youtube.com/watch?v=4gCj9mV6yRc)
-
-# Our Blog Feture :
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-G4aiecSjAM/0.jpg)](https://www.youtube.com/watch?v=-G4aiecSjAM)
-
-# Our News Feture :##
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-G4aiecSjAM/0.jpg)](https://www.youtube.com/watch?v=-G4aiecSjAM)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PLSQ_pVMGfBaPipBOXnCze267aS8EPxe8/0.jpg)](https://www.youtube.com/watch?v=PLSQ_pVMGfBaPipBOXnCze267aS8EPxe8)
 
 
-# Intro to our CSS :##
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-G4aiecSjAM/0.jpg)](https://www.youtube.com/watch?v=-G4aiecSjAM)
-
-# Heroku Migration : ##
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/-G4aiecSjAM/0.jpg)](https://www.youtube.com/watch?v=-G4aiecSjAM)
-
-# Our Corona Statistic Feture :
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0jgYKA_r9a4/0.jpg)](https://www.youtube.com/watch?v=-0jgYKA_r9a4)
-
-
-# Our Curute : Write Your Name :
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/GeWRQvtuhCg/0.jpg)](https://www.youtube.com/watch?v=GeWRQvtuhCg)
-
-
-# How We Solve Problem :
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/pdCQi-cqqOs/0.jpg)](https://www.youtube.com/watch?v=pdCQi-cqqOs)
-
-
-# Take all new files from Master Branch to the existing frocked Repository. :
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/mZ1dLjaMtqk/0.jpg)](https://www.youtube.com/watch?v=mZ1dLjaMtqk)
-
-
-
+1. Our Contact From Fiture :
+2. Our Blog Feture :
+3. Our News Feture :##
+4. Intro to our CSS :##
+5. Heroku Migration : ##
+6. Our Corona Statistic Feture :
+7. Our Curute : Write Your Name :
+8. How We Solve Problem :
+9. Take all new files from Master Branch to the existing frocked Repository. :
+10.
+11.
 
 Name : Sushen Biswas
 
