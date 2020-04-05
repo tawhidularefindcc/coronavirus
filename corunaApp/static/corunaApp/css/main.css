@@ -1679,4 +1679,8 @@ input, select, textarea {
 		
 	}
 
-	
+
+.message-box {
+    min-height: 150px;
+}
+
