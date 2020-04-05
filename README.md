@@ -18,17 +18,18 @@ https://coronavirusbd.herokuapp.com/
 [![Youtube Corona](https://user-images.githubusercontent.com/4492335/78470086-6ee3e080-7748-11ea-9a54-f224b28dc42d.png)](https://www.youtube.com/playlist?list=PLSQ_pVMGfBaPipBOXnCze267aS8EPxe8_)
 
 
-1. Our Contact From Fiture :
-2. Our Blog Feture :
-3. Our News Feture :##
-4. Intro to our CSS :##
-5. Heroku Migration : ##
-6. Our Corona Statistic Feture :
-7. Our Curute : Write Your Name :
-8. How We Solve Problem :
-9. Take all new files from Master Branch to the existing frocked Repository. :
-10.
+1.  How to install coronavirus project
+2.  Add Contact From and Explain Pipline with Github
+3.  Our Blog Feture :
+4.  Our News Feture :
+5.  Intro to our CSS :
+6.  Heroku Migration : 
+7.  Our Corona Statistic Feture :
+8.  Our Curute : Write Your Name :
+9.  How We Solve Problem :
+10. Take all new files from Master Branch to the existing frocked Repository. :
 11.
+12.
 
 Name : Sushen Biswas
 
