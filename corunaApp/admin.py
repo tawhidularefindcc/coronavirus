@@ -17,7 +17,7 @@ BASE_PROJECT_DIR = os.path.dirname(os.path.abspath(__file__ + '../../')).replace
 # Register your models here.
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title','description','image','url')
+    list_display = ('title','image','url')
 
     
     def save_model(self, request, obj, form, change):
@@ -25,7 +25,7 @@ class PostAdmin(admin.ModelAdmin):
         # self.post_to_facebook(obj)
         super().save_model(request, obj, form, change)
         post_obj = Post.objects.latest('date')
-        self.post_to_facebook(post_obj)
+        # self.post_to_facebook(post_obj)
         
     def post_to_facebook(self,object):
         graph = facebook.GraphAPI(access_token=TOKEN)
