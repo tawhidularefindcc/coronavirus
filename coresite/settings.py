@@ -11,16 +11,17 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
-# import django_heroku
+import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_DIR = os.path.join(BASE_DIR,'static')
+MEDIA_DIR = os.path.join(BASE_DIR,'media')
+
 
 # STATIC_DIR = os.path.join(BASE_DIR,'static')
 # Quick-start development settings - unsuitable for production
@@ -34,6 +35,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,12 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'userApp',  # user application
     'corunaApp',
     'crispy_forms',
-    'blogApp.apps.BlogappConfig', # Blog application
-
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -87,6 +88,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'ospbangla@gmail.com'
 EMAIL_HOST_PASSWORD = 'sjynfzpccdcwvspc'
 EMAIL_PORT = 587
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -138,11 +140,16 @@ STATICFILES_DIRS = (
     STATIC_DIR,
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\','/')
+
+MEDIA_URL = '/media/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# django_heroku.settings(locals())
+
+django_heroku.settings(locals())
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -161,4 +168,4 @@ MESSAGE_TAGS = {
 MESSAGE_LEVEL = 25
 
 
-AUTH_USER_MODEL = 'userApp.UserProfile'
+

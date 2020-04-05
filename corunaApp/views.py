@@ -5,8 +5,11 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.conf import settings
 from django.contrib import messages
-
-
+from django.views.generic import ListView,DetailView
+from django.core.paginator import Paginator
+from .models import Post
+import requests
+import json
 
 # Create your views here.
 
@@ -42,3 +45,24 @@ def emailView(request):
 
 def successView(request):
     return HttpResponse('Success! Thank you for your message.')
+
+
+class PostView(ListView):
+    model = Post
+    context_object_name = 'post_list'
+    template_name = 'index.html'
+    
+    
+    def get_queryset(self):
+        return Post.objects.order_by('date')
+    
+    def get_context_data(self, **kwargs):
+        context = super(PostView, self).get_context_data(**kwargs)
+        context['world_info'] = koronaInfo()
+        return context
+    
+def koronaInfo():
+    response = requests.get("https://corona.lmao.ninja/countries?fbclid=IwAR361IpY2mbXU7twwKwwiYX3u6vMiDj3IGzgtNIFQhC0pI0UzaTS_Hq1Gh4")
+    data = response.json() 
+    return data
+    
