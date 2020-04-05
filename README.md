@@ -13,7 +13,7 @@ https://coronavirus-stagibg.herokuapp.com/
 
 https://coronavirusbd.herokuapp.com/
 
-# How to Run This project in your local machin :
+# All Video In the Youtube Playlist  :
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PLSQ_pVMGfBaPipBOXnCze267aS8EPxe8/0.jpg)](https://www.youtube.com/watch?v=PLSQ_pVMGfBaPipBOXnCze267aS8EPxe8)
 
