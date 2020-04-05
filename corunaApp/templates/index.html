@@ -66,7 +66,7 @@
 			<article id="news" style="width:900px">
 
 
-				<div class="row" style="letter-spacing: .1rem;">
+				<div class="row" style="">
 					<div class="col s12 m4">
 						<div class="card blue-grey darken-4">
 							<div class="card-content white-text">
@@ -92,9 +92,15 @@
 										</tr>
 										<tr>
 											<th>আজকের মৃত সংখ্যা</th>
-											<td>{{data.todayDeaths}}
+											<td>{{data.todayDeaths}}</td>
 
 										</tr>
+										{% comment %} <tr>
+											<th>আজকের আক্রান্ত সংখ্যা</th>
+											<td>{{data.todayCases}}</td>
+
+										</tr> {% endcomment %}
+											
 										<tr>
 											<th>সর্বমোট মারা গেছেন</th>
 											<td>{{data.deaths}}</td>
@@ -122,10 +128,10 @@
 							<div class="card-content white-text">
 								<h2 class="orange-text " style="padding:5px">বিশ্বের বর্তমান করোনার অবস্থা </h2>
 
-								<table>
+								<table class='world_news'>
 
 									<thead >
-										<tr class="world">
+										<tr class="world" >
 											<th>দেশ</th>
 											<th>করোনা আক্রান্ত</th>
 											<th>চিকিৎসাধীন আছেন</th>
