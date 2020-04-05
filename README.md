@@ -54,7 +54,7 @@ Name: Kamrul Hasan
 Repo:
 https://github.com/kmrul/coronavirus
 Apps:
-https://coronaproject.herokuapp.com/
+https://coronaproject.herokuapp.com/coruna/
 
 
 
