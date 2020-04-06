@@ -100,7 +100,7 @@
 											<td>{{data.todayCases}}</td>
 
 										</tr> {% endcomment %}
-											
+
 										<tr>
 											<th>সর্বমোট মারা গেছেন</th>
 											<td>{{data.deaths}}</td>
@@ -121,7 +121,7 @@
 						</div>
 					</div>
 
-					
+
 
 					<div class="col s12 m8 blue-grey darken-4" style="height: 440px; overflow: scroll;margin-top:6px">
 						<div class="" style="margin:2px">
@@ -130,8 +130,8 @@
 
 								<table class='world_news'>
 
-									<thead >
-										<tr class="world" >
+									<thead>
+										<tr class="world">
 											<th>দেশ</th>
 											<th>করোনা আক্রান্ত</th>
 											<th>চিকিৎসাধীন আছেন</th>
@@ -147,8 +147,10 @@
 
 										{% for data in world_info %}
 										<tr>
-											
-											<td> <img width="20" height="15" src="{{data.countryInfo.flag}}" style="padding-right: 3px;padding-top:2px" alt="">{{data.country}}</td>
+
+											<td> <img width="20" height="15" src="{{data.countryInfo.flag}}"
+													style="padding-right: 3px;padding-top:2px" alt="">{{data.country}}
+											</td>
 
 											<td>{{data.cases}}</td>
 
@@ -184,9 +186,23 @@
 
 				</div>
 
-				<h2 class="major">করোনা সংবাদ</h2>
+				<h2 class="major" style="margin-top:10px">করোনা সংবাদ</h2>
+
+				<div style="height:500px ; background:white">
+					<center><img height="46"
+							src="//paloimages.prothom-alo.com/contents/themes/public/style/images/Prothom-Alo.png"
+							alt="প্রথম আলো">
+							Product
+							</center>
+					<iframe style="height:90%;width:100%" src="https://service.prothomalo.com/commentary/">
+						<p>Your browser does not support iframes.</p>
+					</iframe>
+				</div>
+
+
+				
 				{% if post_list %}
-				<div class="row">
+				<div class="row" style="margin-top:40px">
 					{% for post in post_list %}
 					<div class="col s12 ">
 
@@ -207,14 +223,18 @@
 						<div class="card horizontal" style="background-color: white;color:black">
 							<div class="card-stacked" style="width: 70%;">
 								<div class="card-content ">
-									<a style="text-decoration: underline ;color:orange" href="{{post.url}}" target="_blank">
-										<h3 class="card-title black-text" style="color:black;font-weight: bold;">{{post.title}}</h3>
+									<a style="text-decoration: underline ;color:orange" href="{{post.url}}"
+										target="_blank">
+										<h3 class="card-title black-text" style="color:black;font-weight: bold;">
+											{{post.title}}</h3>
 									</a>
-									<p  style="padding: 2px; color: black">{{post.description|truncatechars_html:250}}</p>
+									<p style="padding: 2px; color: black">{{post.description|truncatechars_html:250}}
+									</p>
 								</div>
 								<div class="card-action" style="padding:5px;">
 									<small class="" style="padding-left:20px">{{post.date}}</small>
-									<a style="float:right;color:blue;text-decoration:underline" href="{{post.url}}" target="_blank">Details</a>
+									<a style="float:right;color:blue;text-decoration:underline" href="{{post.url}}"
+										target="_blank">Details</a>
 									<!-- <a href="#">This is a link</a> -->
 								</div>
 							</div>
@@ -236,15 +256,15 @@
 									<h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}</h3>
 									<p class="" style="padding: 2px;">{{post.description}}</p>
 								</div>
-								
+
 								<div class="card-action" style="padding:5px;">
-									<small class="right-align" style="padding-left:20px" >{{post.date}}</small>
+									<small class="right-align" style="padding-left:20px">{{post.date}}</small>
 
 									<!-- <a href="#">This is a link</a> -->
 								</div>
 							</div>
 
-							
+
 
 						</div>
 						{% elif not post.image and  post.url %}
@@ -252,14 +272,17 @@
 						<div class="card horizontal" style="background-color: white;color:black">
 							<div class="card-stacked" style="width: 100%;">
 								<div class="card-content ">
-									<a style="text-decoration: underline ;color:orange" href="{{post.url}}" target="_blank">
-										<h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}</h3>
+									<a style="text-decoration: underline ;color:orange" href="{{post.url}}"
+										target="_blank">
+										<h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}
+										</h3>
 									</a>
 									<p class="" style="padding: 2px;">{{post.description|truncatechars_html:250}}</p>
 								</div>
 								<div class="card-action" style="padding:5px;">
 									<small class="" style="padding-left:20px">{{post.date}}</small>
-									<a style="float:right;color:blue;text-decoration:underline" href="{{post.url}}" target="_blank">Details</a>
+									<a style="float:right;color:blue;text-decoration:underline" href="{{post.url}}"
+										target="_blank">Details</a>
 									<!-- <a href="#">This is a link</a> -->
 								</div>
 							</div>
@@ -273,7 +296,7 @@
 
 				</div>
 
-				
+
 
 				{% else %}
 				<p>এখন ও কোন সংবাদ পাওয়া যায় নি</p>
