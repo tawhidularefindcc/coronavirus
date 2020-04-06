@@ -105,6 +105,13 @@ input, select, textarea {
 	body {
 		background: black ;
 	}
+	body::-webkit-scrollbar {
+		width: 3px;
+	  }
+
+	  #prothom_alo::-webkit-scrollbar {
+		width: 3px;
+	  }
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;

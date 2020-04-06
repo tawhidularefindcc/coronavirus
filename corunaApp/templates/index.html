@@ -194,7 +194,7 @@
 							alt="প্রথম আলো">
 							Product
 							</center>
-					<iframe style="height:90%;width:100%" src="https://service.prothomalo.com/commentary/">
+					<iframe id="prothom_alo" style="height:90%;width:100%;padding:10px" src="https://service.prothomalo.com/commentary/">
 						<p>Your browser does not support iframes.</p>
 					</iframe>
 				</div>
@@ -221,26 +221,23 @@
 						{% elif post.image and  post.url %}
 
 						<div class="card horizontal" style="background-color: white;color:black">
-							<div class="card-stacked" style="width: 70%;">
-								<div class="card-content ">
-									<a style="text-decoration: underline ;color:orange" href="{{post.url}}"
-										target="_blank">
-										<h3 class="card-title black-text" style="color:black;font-weight: bold;">
-											{{post.title}}</h3>
-									</a>
-									<p style="padding: 2px; color: black">{{post.description|truncatechars_html:250}}
-									</p>
+						<div class="" style="width: 100%;">
+								<div class="" style="padding:10px;float:right;margin:10px ">
+									<img class="" width="270px" height="250px" src="{{ post.image.url }}">
 								</div>
+								<div class="card-content ; ">
+									<a style="text-decoration: underline ;color:orange" href="{{post.url}}"
+										target="_blank"><h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}</h3></a>
+									<p class="" style="padding: 2px;">{{post.description|truncatechars_html:250}}</p>
+								</div>
+
 								<div class="card-action" style="padding:5px;">
 									<small class="" style="padding-left:20px">{{post.date}}</small>
 									<a style="float:right;color:blue;text-decoration:underline" href="{{post.url}}"
 										target="_blank">Details</a>
+
 									<!-- <a href="#">This is a link</a> -->
 								</div>
-							</div>
-
-							<div class="card-image" style="width: 30%;padding:10px">
-								<img class="" width="250px" height="250px" src="{{ post.image.url }}">
 							</div>
 
 						</div>
