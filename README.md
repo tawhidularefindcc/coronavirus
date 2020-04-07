@@ -49,6 +49,13 @@ https://github.com/jubelAhmed/coronavirus
 Apps:
 https://corunavirus19.herokuapp.com/coruna/
 
+Name: Kamrul Hasan
+
+Repo:
+https://github.com/kmrul/coronavirus
+Apps:
+https://coronaproject.herokuapp.com/coruna/
+
 
 
 
