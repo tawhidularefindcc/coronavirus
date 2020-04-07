@@ -17,10 +17,10 @@
 				{% load static %}
 				<img src="{% static 'corunaApp/images/coron-logo.png' %}" class="logo" alt="Corona>
 			</div>
-			<div class="content" style="font-family: AdorshoLipi !important;">
+			<div class="content" style="font-family: 'SolaimanLipi' !important;">
 				<div class="inner">
 					<h1>করোনা ১৯</h1>
-					<span style="font-family: AdorshoLipi !important;">ঘরে থাকুন , সুস্থ থাকুন</span>
+					<span style="font-size:18px;font-family: 'SolaimanLipi' !important;">ঘরে থাকুন , সুস্থ থাকুন</span>
 				</div>
 			</div>
 			<nav class="" style="background-color:  #1b1f22;width:100%;height:100%;">
@@ -47,12 +47,12 @@
 				<p>
 					করোনাভাইরাস (SARS-CoV-2) ও কোভিড-১৯ কি?
 
-					করোনাভাইরাস (CoV) হোচ্ছে ভাইরাসগুলির এক বৃহৎ পরিবার যা সাধারণ সর্দি কাশি থেকে মারাত্মক অসুখ করতে
+					করোনাভাইরাস (CoV) হচ্ছে ভাইরাসগুলির এক বৃহৎ পরিবার যা সাধারণ সর্দি কাশি থেকে মারাত্মক অসুখ করতে
 					পারে, যেমন (Middle East Respiratory Syndrome (MERSCoV), Severe Acute Respiratory Syndrome (SARS-CoV)
 					এবং কোভিড ১৯ (COVID-19)। করোনাভাইরাসের অনেক গুলো প্রজাতির মধ্যে ৭টি মানবেদেহ রোগ সৃষ্টি করে, যার
 					মাঝে SARS-CoV-2 অন্যতম।
 
-					করোনাভাইরাস গুলি জুলেটিন যার অর্থ প্রানীথেকে মানুষের মধ্যে সংক্রামন করতে পাড়ে ।
+					করোনাভাইরাস গুলি জুলেটিন যার অর্থ প্রানীথেকে মানুষের মধ্যে সংক্রামন করতে পারে ।
 
 					COVID-19 নামক রোগ সৃস্টিকারি SARS-CoV-2 কেরানা ভাইরাস একটি নতুন প্রজাতির যা ইাতমধ্যে মানব শরীের দেখা
 					যায়নি। এটি একটি এনেভলপড,পজিটিভ সেন্স সিঙ্গেল স্ট্রান্ড আরএনএ ভাইরাস।
@@ -60,14 +60,14 @@
 				</p>
 
 				<p>
-					<a href="http://www.corona.gov.bd/documents/what-is-covid-19.pdf">বিস্তারিত</a>
+					<a href="http://www.corona.gov.bd/documents/what-is-covid-19.pdf" target="_blank">বিস্তারিত</a>
 				</p>
 			</article>
 
-			<article id="news" style="width:900px">
+			<article id="news" style="width:950px">
 
 
-				<div class="row" style="letter-spacing: .1rem;">
+				<div class="row" style="">
 					<div class="col s12 m4">
 						<div class="card blue-grey darken-4">
 							<div class="card-content white-text">
@@ -93,9 +93,15 @@
 										</tr>
 										<tr>
 											<th>আজকের মৃত সংখ্যা</th>
-											<td>{{data.todayDeaths}}
+											<td>{{data.todayDeaths}}</td>
 
 										</tr>
+										{% comment %} <tr>
+											<th>আজকের আক্রান্ত সংখ্যা</th>
+											<td>{{data.todayCases}}</td>
+
+										</tr> {% endcomment %}
+
 										<tr>
 											<th>সর্বমোট মারা গেছেন</th>
 											<td>{{data.deaths}}</td>
@@ -116,16 +122,16 @@
 						</div>
 					</div>
 
-					
+
 
 					<div class="col s12 m8 blue-grey darken-4" style="height: 440px; overflow: scroll;margin-top:6px">
 						<div class="" style="margin:2px">
 							<div class="card-content white-text">
 								<h2 class="orange-text " style="padding:5px">বিশ্বের বর্তমান করোনার অবস্থা </h2>
 
-								<table>
+								<table class='world_news'>
 
-									<thead >
+									<thead>
 										<tr class="world">
 											<th>দেশ</th>
 											<th>করোনা আক্রান্ত</th>
@@ -142,8 +148,10 @@
 
 										{% for data in world_info %}
 										<tr>
-											
-											<td> <img width="20" height="15" src="{{data.countryInfo.flag}}" style="padding-right: 3px;padding-top:2px" alt="">{{data.country}}</td>
+
+											<td> <img width="20" height="15" src="{{data.countryInfo.flag}}"
+													style="padding-right: 3px;padding-top:2px" alt="">{{data.country}}
+											</td>
 
 											<td>{{data.cases}}</td>
 
@@ -179,82 +187,105 @@
 
 				</div>
 
-				<h2 class="major">করোনা সংবাদ</h2>
+				<h2 class="major" style="margin-top:10px">করোনা সংবাদ</h2>
+
+				<div style="height:500px ; background:white">
+					<center>
+					<img height="46"
+							src="//paloimages.prothom-alo.com/contents/themes/public/style/images/Prothom-Alo.png"
+							alt="প্রথম আলো">
+								
+							</center>
+					<iframe id="prothom_alo" style="height:90%;width:100%;padding:10px" src="https://service.prothomalo.com/commentary/">
+						<p>Your browser does not support iframes.</p>
+					</iframe>
+				</div>
+
+
+				
 				{% if post_list %}
-				<div class="row">
+				<div class="row" style="margin-top:40px">
 					{% for post in post_list %}
 					<div class="col s12 ">
 
 						{% if not post.image and not post.url %}
-						<div class="card " style="background-color: #1b1f22;">
+						<div class="card " style="background-color: white;color:black">
 							<div class="card-content ">
-								<h3 class="card-title orange-text">{{post.title}}</h3>
-								<p class="white-text " style="padding: 2px;">{{post.description}}</p>
+								<h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}</h3>
+								<p class="" style="padding: 2px;">{{post.description}}</p>
 							</div>
 							<div class="card-action" style="padding:5px;">
-								<small class="right-align">{{post.date}}</small>
+								<small class="" style="padding-left:20px">{{post.date}}</small>
 								<!-- <a href="#">This is a link</a>
 												  <a href="#">This is a link</a> -->
 							</div>
 						</div>
 						{% elif post.image and  post.url %}
 
-						<div class="card horizontal" style="background-color: #1b1f22;">
-							<div class="card-stacked" style="width: 70%;">
-								<div class="card-content ">
-									<a style="text-decoration: underline ;" href="{{post.url}}">
-										<h3 class="card-title orange-text">{{post.title}}</h3>
-									</a>
-									<p class="white-text " style="padding: 2px;">{{post.description}}</p>
+						<div class="card horizontal" style="background-color: white;color:black">
+						<div class="" style="width: 100%;">
+						
+								<div class="" style="padding:10px;float:right;margin:10px ">
+									<img class="" width="230px" height="180px" src="{{ post.image.url }}">
+								
+								</div>
+								<div class="card-content ; ">
+									<a style="text-decoration: underline ;color:orange" href="{{post.url}}"
+										target="_blank"><h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}</h3></a>
+									<p class="" style="padding: 2px;">{{post.description|truncatechars_html:300}}</p>
+									
 								</div>
 								<div class="card-action" style="padding:5px;">
-									<small class="right-align">{{post.date}}</small>
-									<a style="margin-left: 20px;" href="{{post.url}}">Details</a>
+									<small class="" style="padding-left:20px">{{post.date}}</small>
+									<a style="float:right;color:blue;text-decoration:underline" href="{{post.url}}"
+										target="_blank">Details</a>
+
 									<!-- <a href="#">This is a link</a> -->
 								</div>
-							</div>
-
-							<div class="card-image" style="width: 30%;">
-								<img class="" width="250px" height="250px" src="{{ post.image.url }}">
+								
 							</div>
 
 						</div>
 
 
 						{% elif post.image and not post.url %}
-						<div class="card horizontal" style="background-color: #1b1f22;">
-							<div class="card-stacked" style="width: 70%;">
-								<div class="card-content ">
-									<h3 class="card-title orange-text">{{post.title}}</h3>
-									<p class="white-text " style="padding: 2px;">{{post.description}}</p>
+						<div class="card horizontal" style="background-color: white;color:black">
+							<div class="" style="width: 100%;">
+								<div class="" style="padding:10px; float:right;margin:10px ">
+									<img class="" width="250px" height="250px" src="{{ post.image.url }}">
 								</div>
+								<div class="card-content ; ">
+									<h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}</h3>
+									<p class="" style="padding: 2px;">{{post.description}}</p>
+								</div>
+
 								<div class="card-action" style="padding:5px;">
-									<small class="right-align">{{post.date}}</small>
+									<small class="right-align" style="padding-left:20px">{{post.date}}</small>
 
 									<!-- <a href="#">This is a link</a> -->
 								</div>
 							</div>
 
-							<div class="card-image" style="width: 30%;">
-								<img class="" width="250px" height="250px" src="{{ post.image.url }}">
-							</div>
+
 
 						</div>
 						{% elif not post.image and  post.url %}
 
-						<div class="card horizontal" style="background-color: #1b1f22;">
-							<div class="card-stacked" style="width: 70%;">
+						<div class="card horizontal" style="background-color: white;color:black">
+							<div class="card-stacked" style="width: 100%;">
 								<div class="card-content ">
-									<a style="text-decoration: underline ;" href="{{post.url}}">
-										<h3 class="card-title orange-text">{{post.title}}</h3>
+									<a style="text-decoration: underline ;color:orange" href="{{post.url}}"
+										target="_blank">
+										<h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}
+										</h3>
 									</a>
-									<p class="white-text " style="padding: 2px;">{{post.description}}</p>
+									<p class="" style="padding: 2px;">{{post.description|truncatechars_html:250}}</p>
 								</div>
 								<div class="card-action" style="padding:5px;">
-									<small class="right-align">{{post.date}}</small>
-									<a style="margin-left: 20px;" href="{{post.url}}">Details</a>
+									<small class="" style="padding-left:20px">{{post.date}}</small>
+									<a style="float:right;color:blue;text-decoration:underline" href="{{post.url}}"
+										target="_blank">Details</a>
 									<!-- <a href="#">This is a link</a> -->
-
 								</div>
 							</div>
 
@@ -266,6 +297,8 @@
 					{% endfor %}
 
 				</div>
+
+
 
 				{% else %}
 				<p>এখন ও কোন সংবাদ পাওয়া যায় নি</p>
@@ -280,12 +313,12 @@
 				<h2 class="major">আমাদের কাজ</h2>
 				<span class="image main"><img src="{% static 'corunaApp/images/pic02.jpg' %}" alt="" /></span>
 				<p>
-					এক দল কম্পিউটার প্রোগ্রামার ভলান্টিয়ার যারাএইটি ওপেন সোর্স প্রজেক্ট কোরছি করোনা মোকাবিলার জন্য
-					প্রয়োজনীয় প্রজুক্তি তৈরী কারাই আমাদের কাজ । আমরা উন্মুক্ত পদ্ধতিতে কাজ করি । যে কেউ যে কোন সময়
-					আমাদের প্রজেক্টে অংশগ্রহন কোরতে পাড়েন । যে কেউ যে কোন কাজে আমাদের এই প্রজেক্টের সমস্ত উপাদান
-					ব্যাবহার কোরতে পাড়েন । আমাদের সাথে গিটহাবে যোগায়োগ কোরতে পাড়েন অথবা আমাদের সামাজিক মাধ্যমগুলোর
-					সাহায্যে আমাদের সাথে যোগযোগ কোরতে পাড়ের ।
-					এই প্রজেক্টটি সম্পুর্ সেচ্ছা শ্রমে করা ।
+					এক দল কম্পিউটার প্রোগ্রামার ভলান্টিয়ার যারা এইটি ওপেন সোর্স প্রজেক্ট করছি করোনা মোকাবিলার জন্য
+					প্রয়োজনীয় প্রজুক্তি তৈরী করাই আমাদের কাজ । আমরা উন্মুক্ত পদ্ধতিতে কাজ করি । যে কেউ যে কোন সময়
+					আমাদের প্রজেক্টে অংশগ্রহন করতে পারেন । যে কেউ যে কোন কাজে আমাদের এই প্রজেক্টের সমস্ত উপাদান
+					ব্যাবহার করতে পারেন । আমাদের সাথে গিটহাবে যোগায়োগ কোরতে পারেন অথবা আমাদের সামাজিক মাধ্যমগুলোর
+					সাহায্যে আমাদের সাথে যোগযোগ করতে পারেন ।
+					এই প্রজেক্টটি সম্পুর্ন সেচ্ছা শ্রমে করা ।
 
 
 				</p>
@@ -296,12 +329,12 @@
 
 			<!-- About -->
 			<article id="about">
-				<h2 class="major">কি কোরবো ?</h2>
+				<h2 class="major">কি করবো ?</h2>
 				<span class="image main"><img src="{% static 'corunaApp/images/pic03.jpg ' %} " alt="" /></span>
 				<p>
-					একটি এপ্লিকেশন তৈরী কোরবো যা আমাদের করোনা প্রতিরোধে সিন্মিলিতো প্রচেস্টার প্রতিফলন হয় । যেখানে এসে
-					মানুষকে তথ্যের জন্য অপেক্ষা করতে না হয় । যেখান থেকে যে কোন শ্রেনী পেশার মানুষ যে কোন বয়ষের মানুষ
-					যাতে খুব দ্রুত তথ্য পেতে পাড়ে । একই সাথে এই এপ্লিকেশনটা যেন এই সময়ের প্রতিফলন হোয়ে দাড়ায় ।
+					একটি এপ্লিকেশন তৈরী করবো যা আমাদের করোনা প্রতিরোধে সিম্মিলিতো প্রচেস্টার প্রতিফলন হয় । যেখানে এসে
+					মানুষকে তথ্যের জন্য অপেক্ষা করতে না হয় । যেখান থেকে যে কোন শ্রেনী পেশার মানুষ যে কোন বয়সের মানুষ
+					যাতে খুব দ্রুত তথ্য পেতে পারে । একই সাথে এই এপ্লিকেশনটা যেন এই সময়ের প্রতিফলন হয়ে দাড়ায় ।
 				</p>
 			</article>
 
