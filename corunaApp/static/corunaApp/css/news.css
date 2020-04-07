@@ -1,10 +1,10 @@
 
-  table {
+  .world_news table {
     text-align: left;
     position: relative;
     border-collapse: collapse; 
   }
-  th, td {
+  .world_news th, td {
     padding: 0.25rem;
   }
   tr.world th {
@@ -12,7 +12,7 @@
     color: white;
   }
  
-  th {
+  .world_news th {
     
     position: sticky;
     top: 0;

@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
 
 @import url('https://fonts.maateen.me/adorsho-lipi/font.css');
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
 
 
 
@@ -104,6 +105,13 @@ input, select, textarea {
 	body {
 		background: black ;
 	}
+	body::-webkit-scrollbar {
+		width: 3px;
+	  }
+
+	  #prothom_alo::-webkit-scrollbar {
+		width: 3px;
+	  }
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -148,7 +156,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #ffffff;
-		font-family: "Source Sans Pro", sans-serif,'AdorshoLipi' !important;
+		font-family: "SolaimanLipi","Source Sans Pro", sans-serif, !important;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
@@ -179,8 +187,10 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2rem 0;
-		letter-spacing: 0.1rem;
-		font-family: Arial, Helvetica, sans-serif;
+		letter-spacing: 0;
+		font-family: Arial, Helvetica, sans-serif,'SolaimanLipi';
+		font-size:18px;
+		line-height: 30px;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -1209,7 +1219,7 @@ input, select, textarea {
 		-ms-justify-content: space-between;
 		justify-content: space-between;
 		position: relative;
-		min-height: 100vh;
+		min-height: 80vh;
 		width: 100%;
 		padding: 4rem 2rem;
 		z-index: 3;
@@ -1679,4 +1689,8 @@ input, select, textarea {
 		
 	}
 
-	
+
+.message-box {
+    min-height: 150px;
+}
+
