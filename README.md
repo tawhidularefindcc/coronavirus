@@ -58,6 +58,15 @@ https://coronaproject.herokuapp.com/coruna/
 
 
 
+Name : Asaduzzaman Sohel
+
+Repo:
+https://github.com/asadlive84/coronavirus
+Apps:
+https://coronovirus19.herokuapp.com/coruna/
+
+
+
 
 
 
