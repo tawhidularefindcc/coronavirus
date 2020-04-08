@@ -11,16 +11,16 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
+#import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
-STATIC_DIR = os.path.join(BASE_DIR,'static')
-MEDIA_DIR = os.path.join(BASE_DIR,'media')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 
 # STATIC_DIR = os.path.join(BASE_DIR,'static')
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corunaApp',
     'crispy_forms',
+    'userApp.apps.UserappConfig',  # User Application for User Handle
 ]
 
 
@@ -149,7 +150,7 @@ MEDIA_URL = '/media/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -169,3 +170,4 @@ MESSAGE_LEVEL = 25
 
 
 
+AUTH_USER_MODEL = "userApp.UserProfile"
