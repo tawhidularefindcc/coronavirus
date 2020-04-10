@@ -54,10 +54,12 @@ class PostView(ListView):
     
     
     def get_queryset(self):
-        return Post.objects.order_by('date')
+        return Post.objects.all().order_by('-date')
     
     def get_context_data(self, **kwargs):
         context = super(PostView, self).get_context_data(**kwargs)
+        # context['description'] = context['description'][300:]+'<span id="dots">...</span>'+context['description'][301:]
+        # print(context['description'])
         context['world_info'] = koronaInfo()
         return context
     
