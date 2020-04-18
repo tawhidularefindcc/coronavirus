@@ -10,7 +10,6 @@ from django.core.paginator import Paginator
 from .models import Post
 import requests
 import json
-import requests
 
 # Create your views here.
 
@@ -62,13 +61,8 @@ class PostView(ListView):
         # context['description'] = context['description'][300:]+'<span id="dots">...</span>'+context['description'][301:]
         # print(context['description'])
         context['world_info'] = koronaInfo()
-<<<<<<< Updated upstream
         context['world_news'] = getWorldNews()
-
-=======
-       
-       
->>>>>>> Stashed changes
+        
         return context
 
 
