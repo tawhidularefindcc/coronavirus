@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title> ত্রান বিতরন </title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} ">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %} ">
+
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="{% static 'css/elegant-fonts.css' %} ">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %} ">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %} ">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+
+    <!-- corunaApp all style shit  -->
+    
+  <!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+
+
+  <link rel="stylesheet" href="{% static  'corunaApp/css/main.css' %} " />
+  <link rel="stylesheet" href="{% static  'corunaApp/css/news.css' %} " />
+  <noscript>
+    <link rel="stylesheet" href="{% static 'corunaApp/css/noscript.css' %}" /></noscript>
+    <!-- corunaApp all style shit end  -->
+</head>
+<body style="background-color: white;">
+
+    <header class="site-header">
+
+        <div class="nav-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="site-branding d-flex align-items-center">
+                           <a class="d-block" href="{% url 'org' %}" rel="home"><img class="d-block" src="{% static 'images/logo.png" alt="logo"></a>
+                        </div><!-- .site-branding -->
+
+                        <nav class="site-navigation d-flex justify-content-end align-items-center">
+                            <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                <li class="{% if nbar == 'home' %}current-menu-item{% endif %} "><a href="{% url 'org' %}">Home</a></li>
+                                <li><a href="about.html">About us</a></li>
+                                <li><a href="causes.html">Causes</a></li>
+                                <li><a href="portfolio.html">Gallery</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li class="{% if nbar == 'info' %}current-menu-item{% endif %} "><a href="{% url 'index' %}">Our info</a></li>
+                            </ul>
+                        </nav>
+                        <div class="hamburger-menu d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    
+  {% block content %}
+
+  {% endblock %}
+
+
+
+  
+    <script type='text/javascript' src="{% static 'js/jquery.js' %} "></script>
+    <script type='text/javascript' src="{% static 'js/jquery.collapsible.min.js' %} "></script>
+    <script type='text/javascript' src="{% static 'js/swiper.min.js' %} "></script>
+    <script type='text/javascript' src="{% static 'js/jquery.countdown.min.js' %} "></script>
+    <script type='text/javascript' src="{% static 'js/circle-progress.min.js' %} "></script>
+    <script type='text/javascript' src="{% static 'js/jquery.countTo.min.js' %} "></script>
+    <script type='text/javascript' src="{% static 'js/jquery.barfiller.js' %} "></script>
+    <script type='text/javascript' src="{% static 'js/custom.js' %} "></script>
+
+    <!-- coruna app script file -->
+    <!-- Scripts -->
+  <script src="{% static 'corunaApp/js/jquery.min.js' %} "></script>
+  <script src="{% static 'corunaApp/js/browser.min.js' %} "></script>
+  <script src="{% static 'corunaApp/js/breakpoints.min.js' %}"></script>
+  <script src="{% static 'corunaApp/js/util.js' %}"></script>
+  <script src="{% static 'corunaApp/js/main.js' %}"></script>
+
+    <!-- coruna app script end -->
+</body>
+</html>

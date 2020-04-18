@@ -15,7 +15,7 @@ import requests
 # Create your views here.
 
 def index(request):
-    return render(request,'index.html')
+    return render(request,'index.html',{ 'nbar':'info'})
 
 
 def emailView(request):
@@ -62,8 +62,13 @@ class PostView(ListView):
         # context['description'] = context['description'][300:]+'<span id="dots">...</span>'+context['description'][301:]
         # print(context['description'])
         context['world_info'] = koronaInfo()
+<<<<<<< Updated upstream
         context['world_news'] = getWorldNews()
 
+=======
+       
+       
+>>>>>>> Stashed changes
         return context
 
 
@@ -76,7 +81,7 @@ def getWorldNews():
 
     
 def koronaInfo():
-    response = requests.get("https://corona.lmao.ninja/countries?fbclid=IwAR361IpY2mbXU7twwKwwiYX3u6vMiDj3IGzgtNIFQhC0pI0UzaTS_Hq1Gh4")
+    response = requests.get("https://corona.lmao.ninja/v2/countries")
     data = response.json() 
     return data
     
