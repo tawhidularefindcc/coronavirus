@@ -6,7 +6,8 @@
 
 {% block content %}
 
-<div style="background-color:#dd5912; padding:0px;">
+<div style="background: rgba(21,21,21,.9); padding:0px;">
+    
 
 
 	<!-- Wrapper -->
@@ -20,8 +21,8 @@
 			</div>
 			<div class="content" style="font-family: 'SolaimanLipi' !important;">
 				<div class="inner">
-					<h1>করোনা ১৯</h1>
-					<span style="font-size:18px;font-family: 'SolaimanLipi' !important;">ঘরে থাকুন , সুস্থ থাকুন</span>
+					<h1>কোভিড-১৯</h1>
+					<span style="font-size:18px;font-family: 'SolaimanLipi' !important;">করোনা মোকাবিলার জন্য এটা ওপেন সোর্স প্রজেক্ট । <br> আপনারা যে কেউ যে কোন সময় আমাদের প্রজেক্টে অংশগ্রহন করতে পারেন</span>
 				</div>
 			</div>
 			<nav class="" style="background-color:rgba(21,21,21,.9);width:100%;height:90%;">
@@ -70,9 +71,10 @@
 
 				<div class="row" style="">
 					<div class="col s12 m4">
+						<h2 class="" style="color:orange">বাংলাদেশের বর্তমান করোনার অবস্থা </h2>
 						<div class="card bg-dark">
 							<div class="card-content white-text">
-								<span class="card-title orange-text">বাংলাদেশের বর্তমান করোনার অবস্থা </span>
+								
 
 								<table>
 
@@ -97,11 +99,11 @@
 											<td>{{data.todayDeaths}}</td>
 
 										</tr>
-										{% comment %} <tr>
+										 <tr>
 											<th>আজকের আক্রান্ত সংখ্যা</th>
 											<td>{{data.todayCases}}</td>
 
-										</tr> {% endcomment %}
+										</tr> 
 
 										<tr>
 											<th>সর্বমোট মারা গেছেন</th>
@@ -680,6 +682,14 @@
 
 </div>
 
-	
+	 <!-- coruna app script file -->
+    <!-- Scripts -->
+	<script src="{% static 'corunaApp/js/jquery.min.js' %} "></script>
+	<script src="{% static 'corunaApp/js/browser.min.js' %} "></script>
+	<script src="{% static 'corunaApp/js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'corunaApp/js/util.js' %}"></script>
+	<script src="{% static 'corunaApp/js/main.js' %}"></script>
+  
+	  <!-- coruna app script end -->
 
 {% endblock %}

@@ -49,21 +49,32 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
-                        <div class="site-branding d-flex align-items-center">
-                           <a class="d-block" href="{% url 'org' %}" rel="home"><img class="d-block" src="{% static 'images/logo.png" alt="logo"></a>
+                        <div class="site-branding d-flex  align-items-center">
+                           <!-- <a class="d-block" href="{% url 'org' %}" rel="home"><img class="d-block" width="100px" height="50px" src="{% static 'images/logo.png' %}" alt="logo"></a> -->
+
+                           <a  href="{% url 'org' %}"><span  > <strong style="color:#ff5a00"> সহায়তা</strong></span></a>
+                          
                         </div><!-- .site-branding -->
 
-                        <nav class="site-navigation d-flex justify-content-end align-items-center">
-                            <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                <li class="{% if nbar == 'home' %}current-menu-item{% endif %} "><a href="{% url 'org' %}">Home</a></li>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="causes.html">Causes</a></li>
-                                <li><a href="portfolio.html">Gallery</a></li>
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li class="{% if nbar == 'info' %}current-menu-item{% endif %} "><a href="{% url 'index' %}">Our info</a></li>
+
+                        <nav class="site-navigation d-flex justify-content-between align-items-center">
+                            <ul  class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                <li class="{% if nbar == 'home' %}current-menu-item{% endif %} "><a href="{% url 'org' %}"> <i class="fa fa-handshake"></i> সংস্থা</a></li>
+                                <li class="{% if nbar == 'treatment' %}current-menu-item{% endif %} "><a href="#"><i class="fa fa-user-md"></i> অনলাইন চিকিৎসা</a></li>
+                                <li class="{% if nbar == 'news' %}current-menu-item{% endif %} "><a href="{% url 'index' %}"><i class="fa fa-rss"></i> করোনা সংবাদ </a></li>
+                                <li class=" {% if nbar == 'info' %}current-menu-item{% endif %}"><a class="" href="{% url 'index' %}"><i class="fa fa-user-plus"></i> যোগদান</a></li>
+                               
                             </ul>
+                           
                         </nav>
+                        
+                        <!-- <nav class="site-navigation d-flex justify-content-end align-items-center">
+                            <ul  class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                               
+                                <li  class="{% if nbar == 'info' %}current-menu-item{% endif %}"><a href="{% url 'index' %}"><i class="fa fa-user-plus"></i> যোগদান</a></li>
+                            </ul>
+                           
+                        </nav> -->
                         <div class="hamburger-menu d-lg-none">
                             <span></span>
                             <span></span>
@@ -82,6 +93,10 @@
 
   {% endblock %}
 
+  {% block footer %}
+
+  {% endblock footer %}
+
 
 
   
@@ -94,14 +109,6 @@
     <script type='text/javascript' src="{% static 'js/jquery.barfiller.js' %} "></script>
     <script type='text/javascript' src="{% static 'js/custom.js' %} "></script>
 
-    <!-- coruna app script file -->
-    <!-- Scripts -->
-  <script src="{% static 'corunaApp/js/jquery.min.js' %} "></script>
-  <script src="{% static 'corunaApp/js/browser.min.js' %} "></script>
-  <script src="{% static 'corunaApp/js/breakpoints.min.js' %}"></script>
-  <script src="{% static 'corunaApp/js/util.js' %}"></script>
-  <script src="{% static 'corunaApp/js/main.js' %}"></script>
-
-    <!-- coruna app script end -->
+   
 </body>
 </html>
