@@ -1,5 +1,6 @@
 from django.db import models
-from userApp import UserProfile
+from userApp.models import UserProfile
+
 
 
 class Category(models.Model):
