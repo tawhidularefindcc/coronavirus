@@ -50,7 +50,7 @@ def successView(request):
 class PostView(ListView):
     model = Post
     context_object_name = 'post_list'
-    template_name = 'index.html'
+    template_name = 'news.html'
     
     
     def get_queryset(self):
