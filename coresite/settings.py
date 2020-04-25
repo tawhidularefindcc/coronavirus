@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'corunaApp',
     'crispy_forms',
     'userApp.apps.UserappConfig',  # User Application for User Handle
+    'orgApp',
 ]
 
 

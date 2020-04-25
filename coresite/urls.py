@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 
 from django.views.generic import RedirectView
 
@@ -24,11 +24,11 @@ from django.conf.urls.static import static
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('org/',include('orgApp.urls')),
-    path('coruna/',include('corunaApp.urls'),name='coruna'),
-    path('',RedirectView.as_view(url='org/')),
+    path('org/', include('orgApp.urls', namespace='orgApplication')),
+    path('coruna/', include('corunaApp.urls'), name='coruna'),
+    path('', RedirectView.as_view(url='org/')),
     
 ]+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 
-urlpatterns +=  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
