@@ -4,22 +4,21 @@
 
 {% load static %}
 
+{% block script %}
+	<link rel="stylesheet" href="{% static  'corunaApp/css/main.css' %} " />
+	<link rel="stylesheet" href="{% static  'corunaApp/css/news.css' %} " />
+	<noscript>
+		<link rel="stylesheet" href="{% static 'corunaApp/css/noscript.css' %}" />
+	</noscript>
+{% endblock script %}
+
+
+
 {% block content %}
 
-<link rel="stylesheet" href="{% static  'corunaApp/css/main.css' %} " />
-<link rel="stylesheet" href="{% static  'corunaApp/css/news.css' %} " />
-<noscript>
-	<link rel="stylesheet" href="{% static 'corunaApp/css/noscript.css' %}" /></noscript>
 
-<style>
-	.bg-gradient-1{
-		background: #536976; /* fallback for old browsers */
-		background: -webkit-linear-gradient(to right, #536976, #292e49); /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to right, #536976, #292e49);
-	}
-</style>
 
-<div class="bg-gradient-1" style="padding:0px;">
+<div class="bg-gradient-4" style="padding-bottom:45px;">
 	
 	<!-- Wrapper -->
 	<div id="wrapper" style="height: 90%;">
@@ -36,10 +35,10 @@
 					<span style="font-size:18px;font-family: 'SolaimanLipi' !important;">করোনা মোকাবিলার জন্য এটা ওপেন সোর্স প্রজেক্ট । <br> আপনারা যে কেউ যে কোন সময় আমাদের প্রজেক্টে অংশগ্রহন করতে পারেন</span>
 				</div>
 			</div>
-			<nav class="bg-gradient-1" style="width:100%;height:90%;">
+			<nav class="bg-gradient-4" style="width:100%;height:90%;">
 				<ul>
-					<li><a style="font-size:16px" href="#intro">করোনা কী?</a></li>
-					<li><a style="font-size:16px" href="{% url 'news' %}#news">করোনা সংবাদ</a></li>
+					<li><a href="#intro">করোনা কী?</a></li>
+					<!-- <li><a style="font-size:16px" href="{% url 'news' %}#news">করোনা সংবাদ</a></li> -->
 					<li><a style="font-size:16px" href="#work">আমাদের কাজ</a></li>
 					<li><a style="font-size:16px" href="#about">আমরা কারা</a></li>
 					<li><a style="font-size:16px" href="{% url 'email' %}#contact">যোগাযোগ</a></li>
