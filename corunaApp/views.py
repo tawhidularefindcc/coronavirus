@@ -62,6 +62,8 @@ class PostView(ListView):
         # print(context['description'])
         context['world_info'] = koronaInfo()
         context['world_news'] = getWorldNews()
+        context['nbar'] = 'news'
+        
         
         return context
 

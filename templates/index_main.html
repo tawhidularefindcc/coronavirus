@@ -3,17 +3,8 @@
 
 {% block content %}
 
-<style>
-    .bg-gradient-1 {
-        background: #536976;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #536976, #292e49);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #536976, #292e49);
-    }
-</style>
 
-<div class="bg-white text-dark">
+<div class="bg-white text-dark ">
 
     <!-- fixed bg image  -->
     <div class="px-0 pt-2 ">
@@ -25,12 +16,12 @@
                     <div class="row h-100">
                         <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
                             <header class="entry-header">
-                                <h1>দান করুন</h1>
-                                <h4> <strong> সুস্থ ও স্বাভাবিক বাংলাদেশ ফিরিয়ে আনুন</strong></h4>
+                                <h1 class="p-2">দান করুন</h1>
+                                <h4 class="p-2" > <strong> সুস্থ ও স্বাভাবিক বাংলাদেশ ফিরিয়ে আনুন</strong></h4>
                             </header><!-- .entry-header -->
 
-                            <div class="entry-content mt-4">
-                                <p>আপনাদের কিছু দান, বেঁচে যাবে অনেক প্রান </p>
+                            <div class="entry-content mt-3">
+                                <h5 class="p-2 text-warning">আপনাদের কিছু দান, বেঁচে যাবে অনেক প্রান </h5>
                             </div><!-- .entry-content -->
 
                             <!-- <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
@@ -46,14 +37,20 @@
 
 
     <!-- socila activities info -->
-    <div class="px-2 py-0">
+    <div class=" py-0">
         <div class="jumbotron bg-white ">
-            <h3 style="color:#FF5A00">এখানে বাংলাদেশের সকল বিশ্বস্ত সামাজিক কল্যান মূলক প্রতিষ্ঠান গুলো একসাথে পাওয়া
-                যাবে ।</h3>
+            <ul class="list-group list-group-flush " style="color:#FF5A00">
+                <li class="list-group-item "><h5><i class="fas fa-arrow-alt-circle-right"></i>  এখানে বাংলাদেশের সকল বিশ্বস্ত সামাজিক কল্যান মূলক প্রতিষ্ঠান গুলো একসাথে পাওয়া যাবে ।</h5></li>
+                <li class="list-group-item"><h5><i class="fas fa-arrow-alt-circle-right"></i> এখানে আপনি আপানার নিজের এলাকার সংস্থা গুলো খুজে পাবেন সহজে ।</h5></li>
+                <li class="list-group-item"><h5><i class="fas fa-arrow-alt-circle-right"></i> খুজে পাবেন সকল সংস্থা গুলোর অতীত রেকর্ড ।</h5></li>
 
-            <div class="row pt-5">
-                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="card mx-2" style="width: 21rem;height:10rem ;border:2px double blue">
+                
+              </ul>
+            
+
+            <div class="row pt-5 justify-content-center ">
+                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0 ">
+                    <div class="card mx-2" style="height:10rem ;border:2px double blue">
                         <div class="card-body">
                             <h6 style="color:blue;line-height: 1.5rem;letter-spacing: 0rem;">যে প্রতিষ্ঠান গুলো সামাজিক সহায়তা করে থাকে ।
                                 বিপদে পাশে দাঁড়ায়
@@ -62,8 +59,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="card mx-2" style="width: 21rem;height:10rem;border:2px double green">
+                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0 align-self-center">
+                    <div class="card mx-2" style="height:10rem;border:2px double green">
                         <div class="card-body">
 
                             <h6 style="color:green;line-height: 1.5rem;">আপনারা এই সংস্থা গুলোকে সহায়তা করুন যাতে তারা
@@ -72,8 +69,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="card mx-2" style="width: 21rem;height:10rem;border:2px double orange">
+                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0  align-self-center">
+                    <div class="card mx-2" style="height:10rem;border:2px double orange">
                         <div class="card-body">
 
                             <h6 style="color:orange;line-height: 1.5rem;">
@@ -91,7 +88,7 @@
 
     <!-- all socila organization info -->
     <div class="all-socila-info" style="margin-bottom:100px;padding-top:0px">
-        <div class="container">
+        <div class="mx-5 ">
 
             <!-- search  -->
             <div class='org-search bg-white  pt-3 pb-1'>
@@ -136,9 +133,9 @@
             </div>
 
             <!-- all org list -->
-            <div class="row pt-5">
+            <div class="row mt-5">
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="card mx-1" style="width: 22.5rem;border-left:3px solid gray;border-radius:10px">
+                    <div class="card mx-1" style="height:350px; border-left:3px solid gray;border-radius:10px">
                         <div class="card-body">
                             <h4 class="card-title text-primary">তারুণ্য সমাজ কল্যান সংস্থা</h4>
                             <h6 class="card-subtitle mb-2 text-muted">দোয়ারা, সুনামগঞ্জ, সিলেট</h6>
@@ -161,18 +158,18 @@
                                         </ul>
                                 </div>
                             </div>
-
-
-                            <a href="#" class="card-link"> <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </div>
+                        <div class="card-footer  " >
+                            <a href="#" class="card-link  text-primary"  >  <i class="fab fa-facebook p-1"></i>
                                 facebook </a>
-                            <a href="#" class="card-link"><i class="fa fa-spider-web "></i>website</a>
-                            <a href="#" class="card-link text-info">Details</a>
+                            <a href="#" class="card-link  text-primary"><i class="fas fa-globe p-1"></i>website</a>
+                            <a href="#" class="card-link  text-primary" style="float:right" >Details</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="card mx-1" style="width: 22.5rem;border-left:3px solid green;border-radius:10px">
+                    <div class="card mx-1" style="height:350px; border-left:3px solid gray;border-radius:10px">
                         <div class="card-body">
                             <h4 class="card-title text-primary">তারুণ্য সমাজ কল্যান সংস্থা</h4>
                             <h6 class="card-subtitle mb-2 text-muted">দোয়ারা, সুনামগঞ্জ, সিলেট</h6>
@@ -195,49 +192,18 @@
                                         </ul>
                                 </div>
                             </div>
-
-
-                            <a href="#" class="card-link"> <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </div>
+                        <div class="card-footer  " >
+                            <a href="#" class="card-link  text-primary"  >  <i class="fab fa-facebook p-1"></i>
                                 facebook </a>
-                            <a href="#" class="card-link"><i class="fa fa-spider-web "></i>website</a>
-                            <a href="#" class="card-link text-info">Details</a>
+                            <a href="#" class="card-link  text-primary"><i class="fas fa-globe p-1"></i>website</a>
+                            <a href="#" class="card-link  text-primary" style="float:right" >Details</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="card mx-1" style="width: 22.5rem;border-left:3px solid gray;border-radius:10px">
-                        <div class="card-body">
-                            <h4 class="card-title text-primary">তারুণ্য সমাজ কল্যান সংস্থা</h4>
-                            <h6 class="card-subtitle mb-2 text-muted">দোয়ারা, সুনামগঞ্জ, সিলেট</h6>
-                            <p class="card-text">এই সংস্থা দীর্ঘ ৫ বছর যাবৎ কাজ করতেছে। অনেক সামাজিক কাজে এর অবদান আছে।
-                                এখন ও অনেক কাজে এগিয়ে যাইতেছে।
-                            </p>
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <h6 class="text-success"> যোগাযোগ </h6>
 
-                                        <p class="text-success">01742234926 </p>
-
-                                </div>
-                                <div class="col-sm-7">
-                                    <h6 class="text-danger"> একাউন্ট </h6>
-
-                                        <p class="text-danger"><strong class="text-danger">Bkash :</strong> 01742234926
-                                        </p>
-
-                                        </ul>
-                                </div>
-                            </div>
-
-
-                            <a href="#" class="card-link"> <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                                facebook </a>
-                            <a href="#" class="card-link"><i class="fa fa-spider-web "></i>website</a>
-                            <a href="#" class="card-link text-info">Details</a>
-                        </div>
-                    </div>
-                </div>
+             
             </div><!-- .row -->
         </div><!-- .container -->
     </div><!-- .home-page-icon-boxes -->

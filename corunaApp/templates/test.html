@@ -1,21 +1,243 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% if all_info %}
-        {% for data in all_info %}
-          {% if data.country == 'Bangladesh'%}
-                <p>{{data.country}}</p>
-                <p>{{data.deaths}}</p>
-          {% endif %}
+<article id="news" style="width:950px">
+
+
+    <div class="row" style="">
+        <div class="col s12 m4">
+            <div class="card blue-grey darken-4">
+                <div class="card-content white-text">
+                    <span class="card-title orange-text">বাংলাদেশের বর্তমান করোনার অবস্থা </span>
+
+                    <table>
+
+                        <tbody>
+                            {% if world_info %}
+                            {% for data in world_info %}
+                            {% if data.country == 'Bangladesh'%}
+                            <tr>
+                                <th>করোনা আক্রান্ত</th>
+                                <td>{{data.cases}}</td>
+                            </tr>
+                            <tr>
+                                <th>চিকিৎসাধীন আছেন</th>
+                                <td>{{data.active}}</td>
+                            </tr>
+                            <tr>
+                                <th>সুস্থ হয়েছেন</th>
+                                <td>{{data.recovered}}</td>
+                            </tr>
+                            <tr>
+                                <th>আজকের মৃত সংখ্যা</th>
+                                <td>{{data.todayDeaths}}</td>
+
+                            </tr>
+                            {% comment %} <tr>
+                                <th>আজকের আক্রান্ত সংখ্যা</th>
+                                <td>{{data.todayCases}}</td>
+
+                            </tr> {% endcomment %}
+
+                            <tr>
+                                <th>সর্বমোট মারা গেছেন</th>
+                                <td>{{data.deaths}}</td>
+                            </tr>
+
+                            {% endif %}
+                            {% endfor %}
+
+                            {% else %}
+                            <p>none</p>
+                            {% endif %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="col s12 m8 blue-grey darken-4" style="height: 440px; overflow: scroll;margin-top:6px">
+            <div class="" style="margin:2px">
+                <div class="card-content white-text">
+                    <h2 class="orange-text " style="padding:5px">বিশ্বের বর্তমান করোনার অবস্থা </h2>
+
+                    <table class='world_news'>
+
+                        <thead>
+                            <tr class="world">
+                                <th>দেশ</th>
+                                <th>করোনা আক্রান্ত</th>
+                                <th>চিকিৎসাধীন আছেন</th>
+                                <th>সুস্থ হয়েছেন</th>
+                                <th>আজকের মৃত সংখ্যা</th>
+                                <th>আজকের আক্রান্ত সংখ্যা</th>
+                                <th>সর্বমোট মারা গেছেন</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% if world_info %}
+
+                            {% for data in world_info %}
+                            <tr>
+
+                                <td> <img width="20" height="15" src="{{data.countryInfo.flag}}"
+                                        style="padding-right: 3px;padding-top:2px" alt="">{{data.country}}
+                                </td>
+
+                                <td>{{data.cases}}</td>
+
+                                <td>{{data.active}}</td>
+
+
+                                <td>{{data.recovered}}</td>
+
+
+                                <td>{{data.todayDeaths}}</td>
+
+                                <td>{{data.todayCases}}</td>
+
+
+                                <td>{{data.deaths}}</td>
+                            </tr>
+                            {% endfor %}
+
+
+                            {% else %}
+                            <p>none</p>
+                            {% endif %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <h2 class="major" style="margin-top:10px">করোনা সংবাদ</h2>
+
+    <div style="height:500px ; background:white">
+        <center>
+        <img height="46"
+                src="//paloimages.prothom-alo.com/contents/themes/public/style/images/Prothom-Alo.png"
+                alt="প্রথম আলো">
+                    
+                </center>
+        <iframe id="prothom_alo" style="height:90%;width:100%;padding:10px" src="https://service.prothomalo.com/commentary/">
+            <p>Your browser does not support iframes.</p>
+        </iframe>
+    </div>
+
+
+    
+    {% if post_list %}
+    <div class="row" style="margin-top:40px">
+        {% for post in post_list %}
+        <div class="col s12 ">
+
+            {% if not post.image and not post.url %}
+            <div class="card " style="background-color: white;color:black">
+                <div class="card-content ">
+                    <h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}</h3>
+                    <p class="" style="padding: 2px;">{{post.description}}</p>
+                </div>
+                <div class="card-action" style="padding:5px;">
+                    <small class="" style="padding-left:20px">{{post.date}}</small>
+                    <!-- <a href="#">This is a link</a>
+                                      <a href="#">This is a link</a> -->
+                </div>
+            </div>
+            {% elif post.image and  post.url %}
+
+            <div class="card horizontal" style="background-color: white;color:black">
+            <div class="" style="width: 100%;">
+            
+                    <div class="" style="padding:10px;float:right;margin:10px ">
+                        <img class="" width="230px" height="180px" src="{{ post.image.url }}">
+                    
+                    </div>
+                    <div class="card-content ; ">
+                        <a style="text-decoration: underline ;color:orange" href="{{post.url}}"
+                            target="_blank"><h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}</h3></a>
+                        <p class="" style="padding: 2px;">{{post.description|truncatechars_html:300}}</p>
+                        
+                    </div>
+                    <div class="card-action" style="padding:5px;">
+                        <small class="" style="padding-left:20px">{{post.date}}</small>
+                        <a style="float:right;color:blue;text-decoration:underline" href="{{post.url}}"
+                            target="_blank">Details</a>
+
+                        <!-- <a href="#">This is a link</a> -->
+                    </div>
+                    
+                </div>
+
+            </div>
+
+
+            {% elif post.image and not post.url %}
+            <div class="card horizontal" style="background-color: white;color:black">
+                <div class="" style="width: 100%;">
+                    <div class="" style="padding:10px; float:right;margin:10px ">
+                        <img class="" width="250px" height="250px" src="{{ post.image.url }}">
+                    </div>
+                    <div class="card-content ; ">
+                        <h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}</h3>
+                        <p class="" style="padding: 2px;">{{post.description}}</p>
+                    </div>
+
+                    <div class="card-action" style="padding:5px;">
+                        <small class="right-align" style="padding-left:20px">{{post.date}}</small>
+
+                        <!-- <a href="#">This is a link</a> -->
+                    </div>
+                </div>
+
+
+
+            </div>
+            {% elif not post.image and  post.url %}
+
+            <div class="card horizontal" style="background-color: white;color:black">
+                <div class="card-stacked" style="width: 100%;">
+                    <div class="card-content ">
+                        <a style="text-decoration: underline ;color:orange" href="{{post.url}}"
+                            target="_blank">
+                            <h3 class="card-title " style="color:black;font-weight: bold;">{{post.title}}
+                            </h3>
+                        </a>
+                        <p class="" style="padding: 2px;">{{post.description|truncatechars_html:250}}</p>
+                    </div>
+                    <div class="card-action" style="padding:5px;">
+                        <small class="" style="padding-left:20px">{{post.date}}</small>
+                        <a style="float:right;color:blue;text-decoration:underline" href="{{post.url}}"
+                            target="_blank">Details</a>
+                        <!-- <a href="#">This is a link</a> -->
+                    </div>
+                </div>
+
+            </div>
+            {% endif %}
+
+        </div>
+
         {% endfor %}
-        
+
+    </div>
+
+
+
     {% else %}
-        <p>none</p>
+    <p>এখন ও কোন সংবাদ পাওয়া যায় নি</p>
     {% endif %}
-</body>
-</html>
+
+
+
+</article>
