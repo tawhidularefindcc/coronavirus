@@ -1,18 +1,77 @@
 {% extends 'base_temp.html' %}
+{% load crispy_forms_tags %}
+
+{% block script %}
+    <style>
+    .asteriskField {
+        color:red;
+    }
+    </style>
+{% endblock script %}
 
 {% block content %}
 
-    {% if new %}
-        {% if errorMsg %}<p>{{ errorMsg }}</p>{% endif %}
-        {% if orgForm %}
-            <form action="{% url 'orgApplication:self_org' %}" method="post">
-                {% csrf_token %}
-                {{ orgForm.as_p }}
-                <input type="submit" value="Submit">
-            </form>
+    <div class="container">
+        <div class="jumbotron bg-white">
+            {% if new %}
+            {% if errorMsg %}<p>{{ errorMsg }}</p>{% endif %}
+            {% if orgForm and org_detail_form %}
+                <form action="{% url 'orgApplication:self_org' %}" method="post">
+                    {% csrf_token %}
+                    {{ orgForm.name|as_crispy_field }}
+                    {{ orgForm.about|as_crispy_field }}
+                    <div class="row">
+                        <div class="col-sm-4">
+                            {{ orgForm.division|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ orgForm.district|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ orgForm.thana|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ orgForm.email|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-6">
+                            {{ orgForm.phone|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            {{ org_detail_form.image|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ org_detail_form.logo|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ org_detail_form.description|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            {{ org_detail_form.website_url|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ org_detail_form.youtube_url|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ org_detail_form.facebook_url|as_crispy_field }}
+                        </div>
+                    </div>
+                    
+                    <input class="btn btn-success" type="submit" value="রেজিস্ট্রেশন">
+                </form>
+              
+            {% endif %}
+        {% else %}
+            <p>Old user</p>
         {% endif %}
-    {% else %}
-        <p>Old user</p>
-    {% endif %}
+        </div>
+    </div>
+
+    
 
 {% endblock %}
