@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 release: python manage.py migrate
-web: gunicorn coresite.wsgi --access-logfile -
+web: gunicorn coresite.wsgi --log-file -
