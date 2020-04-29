@@ -51,8 +51,7 @@ class Organisation(models.Model):
     owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=255)
     about = models.TextField()
-    org_category = models.ForeignKey(Category, verbose_name="Category", on_delete=models.SET_NULL, null=True,
-                                     blank=True)
+    org_category = models.ForeignKey(Category, verbose_name="Category", on_delete=models.SET_NULL, null=True,blank=True)
     division = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
     district = models.ForeignKey(District, on_delete=models.SET_NULL, null=True)
     thana = models.ForeignKey(Thana, on_delete=models.SET_NULL, null=True)
@@ -68,19 +67,19 @@ class Organisation(models.Model):
 
 
 class OrgDetail(models.Model):
-    organisation = models.OneToOneField(Organisation, on_delete=models.CASCADE, primary_key=True)
-    image = models.ImageField(upload_to='images', null=True, blank=True)
-    logo = models.ImageField(upload_to='images', null=True, blank=True)
-    description = models.TextField()
-    facebook_url = models.URLField(null=True, blank=True)
-    twitter_url = models.URLField(null=True, blank=True)
-    youtube_url = models.URLField(null=True, blank=True)
-    website_url = models.URLField(null=True, blank=True)
+    organisation = models.OneToOneField(Organisation, on_delete=models.CASCADE, related_name='org_detail')
+    image = models.ImageField(upload_to='images/org/', null=True, blank=True)
+    logo = models.ImageField(upload_to='images/logo/', null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    facebook_url = models.URLField(max_length=2000)
+    twitter_url = models.URLField(max_length=2000,null=True, blank=True)
+    youtube_url = models.URLField(max_length=2000,null=True, blank=True)
+    website_url = models.URLField(max_length=2000,null=True, blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.description}"
+        return f"{self.facebook_url}"
 
 
 class OrgProject(models.Model):
@@ -89,7 +88,7 @@ class OrgProject(models.Model):
     selected_area = models.CharField(max_length=255)
     details = models.TextField()
     duration = models.DateTimeField()
-    project_image = models.ImageField(upload_to='images', null=True, blank=True)
+    project_image = models.ImageField(upload_to='images/org/project/', null=True, blank=True)
     budget = models.CharField(max_length=255)
     status = models.TextField(verbose_name="Status")
     created_date = models.DateTimeField(auto_now_add=True)

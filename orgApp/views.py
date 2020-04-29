@@ -38,16 +38,14 @@ def self_org(request: HttpRequest):
             context['org_detail_form'] = org_detail_form
         return render(request, 'orgApp/selfOrg.html', context)
     elif request.method == 'POST':
-        data = request.POST
-
         if new:
-            form = forms.OrganisationMainRegForm(data)
-            orgForm = forms.OrgDetailMainRegForm(data, request.FILES)
+            form = forms.OrganisationMainRegForm(request.POST,request.FILES)
+            orgForm = forms.OrgDetailMainRegForm(request.POST, request.FILES)
             if form.is_valid() and orgForm.is_valid():
-                new_org = form.save()
-                orgForm.save(commit=False)
-                orgForm.organisation = new_org
-                orgForm.save()
+                new_org = form.save(commit = True)
+                details = orgForm.save(commit=False)
+                details.organisation = new_org
+                details.save()
                 return HttpResponsePermanentRedirect(reverse("orgApplication:self_org"))
         context['errorMsg'] = 'Not new user'
         return render(request, 'orgApp/selfOrg.html', context)
