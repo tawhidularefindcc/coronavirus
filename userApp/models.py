@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
-
+import uuid
 
 class UserProfileManager(BaseUserManager):
     """Manager for user profiles"""
@@ -11,6 +11,9 @@ class UserProfileManager(BaseUserManager):
         """create a new user profile"""
         if not email:
             raise ValueError("User must have an email address")
+        if not name:
+            """ Generating random unique name if not given """
+            name = uuid.uuid4().hex[:12].upper()
 
         email = self.normalize_email(email)
         user = self.model(email=email, name=name)

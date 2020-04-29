@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'coresite.wsgi.application'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'ospbangla@gmail.com'
-EMAIL_HOST_PASSWORD = 'sjynfzpccdcwvspc'
+EMAIL_HOST_PASSWORD = 'jpwzkkxgrdjebwfi'
 EMAIL_PORT = 587
 
 
@@ -180,4 +180,5 @@ MESSAGE_LEVEL = 25
 AUTH_USER_MODEL = "userApp.UserProfile"
 
 LOGIN_REDIRECT_URL = '/org/'
+LOGOUT_REDIRECT_URL = '/org/'
 

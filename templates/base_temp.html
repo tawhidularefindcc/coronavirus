@@ -29,6 +29,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{% static 'css/style.css' %} ">
     <link rel="stylesheet" href="{% static 'css/color.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/common.css' %} ">
 
     {% block script %}
     {% endblock script %}
@@ -52,13 +53,21 @@
                         <nav class="site-navigation d-flex justify-content-end align-items-center">
                             <ul  class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                 <li class="{% if nbar == 'home' %}current-menu-item{% endif %} "><a href="{% url 'orgApplication:org' %}"> <i class="fa fa-handshake pr-1"></i>সংস্থা</a></li>
-                                <li class="{% if nbar == 'treatment' %}current-menu-item{% endif %} "><a href="#"><i class="fa fa-user-md pr-1"></i>অনলাইন চিকিৎসা</a></li>
-                                <li class="{% if nbar == 'news' %}current-menu-item{% endif %} "><a href="{% url 'news' %}"><i class="fa fa-rss pr-1"></i> করোনা সংবাদ </a></li>
+                                <!-- <li class="{% if nbar == 'treatment' %}current-menu-item{% endif %} "><a href="#"><i class="fa fa-user-md pr-1"></i>অনলাইন চিকিৎসা</a></li> -->
+                                <li class="{% if nbar == 'news' %}current-menu-item{% endif %} "><a href="{% url 'news' %}"><i class="fa fa-rss pr-1"></i> লাইভ সংবাদ </a></li>
 
-                                <li class="{% if nbar == 'org_reg' %}current-menu-item{% endif %} "><a href="{% url 'orgApplication:self_org' %}"><i class="fa fa-rss pr-1"></i>সংস্থা রেজিস্ট্রেশন </a></li>
+                                {% if user.is_authenticated %}
+                                <li class="{% if nbar == 'org_reg' %}current-menu-item{% endif %} " ><a  href="{% url 'orgApplication:self_org' %}"><i class="fa fa-rss pr-1"></i>সংস্থা রেজিস্ট্রেশন </a></li>
+                                {% endif %}
 
                                 <!-- <li class="{% if nbar == 'signin' %}current-menu-item{% endif %} "><a href="{% url 'news' %}"><i class="fa fa-rss pr-1"></i>প্রবেশ করুন</a></li> -->
                                 <li class=" {% if nbar == 'info' %}current-menu-item{% endif %}"><a href="{% url 'index' %}"><i class="fa fa-user-plus pr-1"></i>ওপেন সোর্স যোগদান</a></li>
+                                {% if  user.is_authenticated %}
+                                <li class=" {% if nbar == 'logout' %}current-menu-item{% endif %}"><a href="{% url 'logout' %}" class="text-danger"><i class="fa fa-sign-out-alt pr-1"></i>লগ আউট</a></li>
+                                
+                                {% else %}
+                                <li class=" {% if nbar == 'login' %}current-menu-item{% endif %}"><a href="{% url 'login' %}" class="text-success"><i class="fa fa-sign-in-alt pr-1"></i>প্রবেশ করুন</a></li>
+                                {% endif %}
                                
                             </ul>
                            
