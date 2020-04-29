@@ -49,8 +49,12 @@ INSTALLED_APPS = [
     'crispy_forms',
     'userApp.apps.UserappConfig',  # User Application for User Handle
     'orgApp',
+    'mediumeditor',
+    'import_export',
+  
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 MIDDLEWARE = [
@@ -124,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'bn'
 
 TIME_ZONE = 'UTC'
 
@@ -145,7 +149,7 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\','/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
@@ -155,6 +159,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #django_heroku.settings(locals())
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+# EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -171,5 +177,7 @@ MESSAGE_TAGS = {
 MESSAGE_LEVEL = 25
 
 
-
 AUTH_USER_MODEL = "userApp.UserProfile"
+
+LOGIN_REDIRECT_URL = '/org/'
+

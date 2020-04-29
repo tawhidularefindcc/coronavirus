@@ -69,15 +69,24 @@ class PostView(ListView):
 
 
 def getWorldNews():
-    url = ('http://newsapi.org/v2/top-headlines?'
+    try:
+        url = ('http://newsapi.org/v2/top-headlines?'
            'language=en&q=corona&'
            'apiKey=6a9f67a44df84a3faa38a4d1afce3aaf')
-    response = requests.get(url)
-    return response.json().get('articles', [])
+        response = requests.get(url)
+        data = response.json().get('articles', [])
+    except:
+        data = None
+    
+    return data
 
     
 def koronaInfo():
-    response = requests.get("https://corona.lmao.ninja/v2/countries")
-    data = response.json() 
+    try:
+        response = requests.get("https://corona.lmao.ninja/v2/countries")
+        data = response.json() 
+    except :
+        data = None
+    
     return data
     

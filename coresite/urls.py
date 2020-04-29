@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('org/', include('orgApp.urls', namespace='orgApplication')),
     path('coruna/', include('corunaApp.urls'), name='coruna'),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', RedirectView.as_view(url='org/')),
     
 ]+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

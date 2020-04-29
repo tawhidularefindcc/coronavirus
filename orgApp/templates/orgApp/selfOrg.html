@@ -1,18 +1,95 @@
 {% extends 'base_temp.html' %}
+{% load crispy_forms_tags %}
+
+{% block script %}
+    <style>
+    .asteriskField {
+        color:red;
+    }
+    </style>
+{% endblock script %}
 
 {% block content %}
 
-    {% if new %}
-        {% if errorMsg %}<p>{{ errorMsg }}</p>{% endif %}
-        {% if orgForm %}
-            <form action="{% url 'orgApplication:self_org' %}" method="post">
-                {% csrf_token %}
-                {{ orgForm.as_p }}
-                <input type="submit" value="Submit">
-            </form>
+<div class=" bg-gradient-2">
+    <div class="jumbotron bg-gradient-2">
+        <h4 class="" style="color:#FF5A00">এখানে আপনারা আপনাদের নতুন সংস্থা বা প্রতিষ্ঠান রেজিস্ট্রেশন করুণ ।</h4>
+    <ul class="list-group list-group-flush bg-gradient-2 text-white" >
+        <li class="list-group-item bg-gradient-2"><h6><i class="fas fa-arrow-alt-circle-right"></i>  আমরা আপনাদের প্রতিষ্ঠান কে বাংলাদেশের সকল মানুষের কাছে পৌঁছে দিব ।</h6></li>
+        <li class="list-group-item bg-gradient-2"><h6><i class="fas fa-arrow-alt-circle-right"></i>  আপনারা অসহায়দের সেবা বা দান করার জন্যে নতুন কোন উদ্যোগ নিলে এখানে আপানাদের প্রতিষ্ঠানের পেজ এ গিয়ে একটা প্রজেক্ট তৈরী করেবন তা আমরা মানুষের কাছে পৌঁছে দিব । </h6></li>
+        <li class="list-group-item bg-gradient-2"><h6><i class="fas fa-arrow-alt-circle-right"></i> বাংলাদেশের সকল সামাজিক প্রতিষ্ঠান গুলো একত্র করার লক্ষে আমরা কাজ করে যাচ্ছি  </h6></li>
+        
+
+        
+      </ul>
+    </div>
+
+</div>
+
+    <div class="container">
+        
+        <div class="jumbotron bg-white">
+            {% if new %}
+            {% if errorMsg %}<p>{{ errorMsg }}</p>{% endif %}
+            {% if orgForm and org_detail_form %}
+                <form action="{% url 'orgApplication:self_org' %}" enctype="multipart/form-data" method="post">
+                    {% csrf_token %}
+                    {{ orgForm.name|as_crispy_field }}
+                    {{ orgForm.about|as_crispy_field }}
+                    <div class="row">
+                        <div class="col-sm-4">
+                            {{ orgForm.division|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ orgForm.district|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ orgForm.thana|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{ orgForm.email|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-6">
+                            {{ orgForm.phone|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            {{ org_detail_form.facebook_url|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ org_detail_form.website_url|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ org_detail_form.youtube_url|as_crispy_field }}
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            {{ org_detail_form.image|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ org_detail_form.logo|as_crispy_field }}
+                        </div>
+                        <div class="col-sm-4">
+                            {{ org_detail_form.description|as_crispy_field }}
+                        </div>
+                    </div>
+                   
+                    
+                    <input class="btn btn-success" type="submit" value="রেজিস্ট্রেশন">
+                </form>
+              
+            {% endif %}
+        {% else %}
+            <p>Old user</p>
         {% endif %}
-    {% else %}
-        <p>Old user</p>
-    {% endif %}
+        </div>
+    </div>
+
+    
 
 {% endblock %}

@@ -7,7 +7,7 @@ from django.contrib.auth.models import BaseUserManager
 class UserProfileManager(BaseUserManager):
     """Manager for user profiles"""
 
-    def create_user(self, email, name, password=None):
+    def create_user(z):
         """create a new user profile"""
         if not email:
             raise ValueError("User must have an email address")
@@ -43,10 +43,12 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name']
+    EMAIL_FIELD = 'email'
+
 
     def get_username(self):
         """Retrieve username of user"""
-        return self.name
+        return self.email
 
     def get_full_name(self):
         """Retrieve full name of user"""
