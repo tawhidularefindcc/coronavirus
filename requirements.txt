@@ -7,6 +7,7 @@ django-appconf==1.0.4
 django-crispy-forms==1.9.0
 django-heroku==0.3.1
 django-mediumeditor==1.0.0
+django-import-export
 facebook-sdk==3.1.0
 firebase==3.0.1
 gunicorn==20.0.4
