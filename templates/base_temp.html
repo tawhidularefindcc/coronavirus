@@ -57,8 +57,13 @@
                                 <li class="{% if nbar == 'news' %}current-menu-item{% endif %} "><a href="{% url 'news' %}"><i class="fa fa-rss pr-1"></i> লাইভ সংবাদ </a></li>
 
                                 {% if user.is_authenticated %}
-                                <li class="{% if nbar == 'org_reg' %}current-menu-item{% endif %} " ><a  href="{% url 'orgApplication:self_org' %}"><i class="fa fa-rss pr-1"></i>সংস্থা রেজিস্ট্রেশন </a></li>
+                                   
+                                        <li class="{% if nbar == 'org_reg' %}current-menu-item{% endif %} " ><a  href="{% url 'orgApplication:self_org' %}"><i class="fa fa-user pr-1"></i> প্রতিষ্ঠান  </a></li>
+                                  
+                                
                                 {% endif %}
+
+                                
 
                                 <!-- <li class="{% if nbar == 'signin' %}current-menu-item{% endif %} "><a href="{% url 'news' %}"><i class="fa fa-rss pr-1"></i>প্রবেশ করুন</a></li> -->
                                 <li class=" {% if nbar == 'info' %}current-menu-item{% endif %}"><a href="{% url 'index' %}"><i class="fa fa-user-plus pr-1"></i>ওপেন সোর্স যোগদান</a></li>

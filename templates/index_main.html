@@ -1,11 +1,36 @@
 {% extends 'base_temp.html' %}
 {% load static %}
 
+{% block script %}
+<style>
+    .pagination {
+      display: inline-block;
+    }
+    
+    .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+      border: 1px solid #ddd;
+    }
+    
+    .pagination a.active {
+      background-color: #4CAF50;
+      color: white;
+      border: 1px solid #4CAF50;
+    }
+    
+    .pagination a:hover:not(.active) {background-color: #ddd;}
+    </style>
+    
+{% endblock script %}
+
 {% block content %}
 
 
 <div class="bg-white text-dark ">
-
     <!-- fixed bg image  -->
     <div class="px-0 pt-2 ">
         <div class="swiper-slide hero-content-wrap">
@@ -87,7 +112,8 @@
     </div>
 
     <!-- all socila organization info -->
-    <div class="all-socila-info" style="margin-bottom:100px;padding-top:0px">
+    <div class="all-socila-info" id="organisation-info" style="margin-bottom:100px;padding-top:0px">
+        <h3 class="text-warning bg-gradient-2 p-5" > বাংলাদেশের সকল সংস্থা বা প্রতিষ্ঠান </h3>
         <div class="mx-5 ">
 
             <!-- search  -->
@@ -134,75 +160,47 @@
 
             <!-- all org list -->
             <div class="row mt-5">
+                {% if organisation_list %}
+                    {% for org in organisation_list %}
+
+                    
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
                     <div class="card mx-1" style=" border-left:3px solid gray;border-radius:10px">
                         <div class="card-body">
-                            <h4 class="card-title text-primary">তারুণ্য সমাজ কল্যান সংস্থা</h4>
-                            <h6 class="card-subtitle mb-2 text-muted">দোয়ারা, সুনামগঞ্জ, সিলেট</h6>
-                            <p class="card-text">এই সংস্থা দীর্ঘ ৫ বছর যাবৎ কাজ করতেছে। অনেক সামাজিক কাজে এর অবদান আছে।
-                                এখন ও অনেক কাজে এগিয়ে যাইতেছে।
+                            <h4 class="card-title text-primary"> {{ org.name}}</h4>
+                            <h6 class="card-subtitle mb-2 text-muted"> {{ org.thana}},  {{ org.district}},  {{ org.division}}</h6>
+                            <p class="card-text"> {{ org.about|truncatechars:255 }}
                             </p>
                             <div class="row">
                                 <div class="col-sm-5">
                                     <h6 class="text-success"> যোগাযোগ </h6>
 
-                                        <p class="text-success">01742234926 </p>
+                                        <p class="text-success"> {{ org.phone}} </p>
 
                                 </div>
-                                <div class="col-sm-7">
+                                <!-- <div class="col-sm-7">
                                     <h6 class="text-danger"> একাউন্ট </h6>
 
                                         <p class="text-danger"><strong class="text-danger">Bkash :</strong> 01742234926
                                         </p>
 
                                         </ul>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="card-footer  " >
-                            <a href="#" class="card-link  text-primary"  >  <i class="fab fa-facebook "></i>
+
+                            <a href=" {{ org.facebook_url}}" class="card-link  text-primary"  >  <i class="fab fa-facebook "></i>
                                 ফেসবুক </a>
-                            <a href="#" class="card-link  text-primary"><i class="fas fa-globe ">ওয়েব</i></a>
-                            <a href="#" class="card-link  text-danger" style="float:right" >আরও..</a>
+                            {% if org.website_url %}
+                            <a href="{{ org.website_ur}}" class="card-link  text-primary"><i class="fas fa-globe ">ওয়েব</i></a>
+                            {% endif %}
+                            <a href="#" class="card-link  text-danger" style="float:right;text-decoration: underline;" >বিস্তারিত</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="card mx-1" style="height:350px; border-left:3px solid gray;border-radius:10px">
-                        <div class="card-body">
-                            <h4 class="card-title text-primary">তারুণ্য সমাজ কল্যান সংস্থা</h4>
-                            <h6 class="card-subtitle mb-2 text-muted">দোয়ারা, সুনামগঞ্জ, সিলেট</h6>
-                            <p class="card-text">এই সংস্থা দীর্ঘ ৫ বছর যাবৎ কাজ করতেছে। অনেক সামাজিক কাজে এর অবদান আছে।
-                                এখন ও অনেক কাজে এগিয়ে যাইতেছে।
-                            </p>
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <h6 class="text-success"> যোগাযোগ </h6>
-
-                                        <p class="text-success">01742234926 </p>
-
-                                </div>
-                                <div class="col-sm-7">
-                                    <h6 class="text-danger"> একাউন্ট </h6>
-
-                                        <p class="text-danger"><strong class="text-danger">Bkash :</strong> 01742234926
-                                        </p>
-
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer  " >
-                            <a href="#" class="card-link  text-primary"  >  <i class="fab fa-facebook p-1"></i>
-                                facebook </a>
-                            <a href="#" class="card-link  text-primary"><i class="fas fa-globe p-1"></i>website</a>
-                            <a href="#" class="card-link  text-primary" style="float:right" >Details</a>
-                        </div>
-                    </div>
-                </div>
-
-
+                 {% endfor %}
+            {% endif %}
              
             </div><!-- .row -->
         </div><!-- .container -->
@@ -212,6 +210,42 @@
 
 
 </div>
+
+
+{% if organisation_list.has_other_pages %}
+<div class="pagination m-3 pl-4">
+    <span class="step-links">
+
+        {% for i in organisation_list.paginator.page_range %}
+            {% if organisation_list.number == i %}
+                <a class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
+            {% else %}
+                <a href="?page={{ i }}#organisation-info">{{ i }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if organisation_list.has_previous %}
+            <a class="text-success" href="?page=1#organisation-info">&laquo; প্রথম</a>
+            <a class="text-success" href="?page={{ organisation_list.previous_page_number }}#organisation-info">পূর্বে</a>
+        {% endif %}
+
+        
+        <!-- <a href="#" class="active">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a> -->
+        <span class="current text-success">
+            Page {{ organisation_list.number }} of {{ organisation_list.paginator.num_pages }}.
+        </span>
+
+        {% if organisation_list.has_next %}
+            <a class="text-success" href="?page={{ organisation_list.next_page_number }}#organisation-info">পরবর্তী</a>
+            <a class="text-success" href="#organisation-info?page={{ organisation_list.paginator.num_pages }}#organisation-info">শেষ &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endif %}
+
 
 {% endblock content %}
 
