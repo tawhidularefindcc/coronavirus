@@ -40,17 +40,17 @@ class OrganisationMainRegForm(forms.ModelForm):
 class OrgDetailMainRegForm(forms.ModelForm):
     class Meta:
         model = models.OrgDetail
-        fields = ('image', 'logo', 'description', 'facebook_url', 'website_url', 'youtube_url')
+        fields = ('image', 'logo', 'facebook_url', 'website_url', 'youtube_url')
         labels = {
             'image': _('সংস্থার গ্রপ ছবি'),
             'logo': _('লগো'),
-            'description': _(' অন্যান্য কথা'),
             'facebook_url': _('ফেসবুক পেজ লিংক'),
             'website_url': _('ওয়েবসাইট লিংক'),
             'youtube_url': _('ইউটিউব লিংক'),
 
         }
 
+# 'description': _(' অন্যান্য কথা'),
 
 class OrgProjectMainRegForm(forms.ModelForm):
     class Meta:

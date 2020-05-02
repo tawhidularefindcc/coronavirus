@@ -48,7 +48,7 @@ class Category(models.Model):
 
 
 class Organisation(models.Model):
-    owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE, null=True, blank=True)
+    owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     about = models.TextField()
     org_category = models.ForeignKey(Category, verbose_name="Category", on_delete=models.SET_NULL, null=True,blank=True)
@@ -60,6 +60,7 @@ class Organisation(models.Model):
     email = models.EmailField(max_length=255, unique=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
+    status = models.BooleanField(default=False)
     objects = models.QuerySet()
 
     def __str__(self):
