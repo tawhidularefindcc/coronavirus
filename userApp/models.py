@@ -7,7 +7,7 @@ import uuid
 class UserProfileManager(BaseUserManager):
     """Manager for user profiles"""
 
-    def create_user(z):
+    def create_user(self, email, name, password):
         """create a new user profile"""
         if not email:
             raise ValueError("User must have an email address")
