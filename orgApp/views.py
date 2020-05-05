@@ -1,10 +1,11 @@
+from django.contrib import messages
 from django.shortcuts import render
 from .models import *
 from django.http import HttpRequest, HttpResponsePermanentRedirect
 from django.shortcuts import reverse
 from orgApp import forms
 from userApp.models import UserProfile
-from .models import Organisation,City,District,Thana
+from .models import *
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 
@@ -17,7 +18,7 @@ def home(request):
     divisions = City.objects.all().order_by('name')
     districts = District.objects.all().order_by('name')
     thanas = Thana.objects.all().order_by('name')
-    context  ={}
+    context = {}
     if total_org_list > 0:
         all_org = Organisation.objects.filter(status=True).order_by('name')
         paginator = Paginator(all_org, 1) # Show 25 contacts per page.
@@ -39,18 +40,18 @@ def home(request):
 def organizationProfile(request):
     user = request.user
     total_org_list = Organisation.objects.all().count()
-    context  ={}
+    context = {}
     profile_have = False
     if total_org_list > 0:
         org= Organisation.objects.filter(owner=user)
         profile_have = True
         context = {
-            'profile_have':profile_have,
-            'org_profile':org,
+            'profile_have': profile_have,
+            'org_profile': org,
         }
     else: 
         context = {
-            'profile_have':profile_have,
+            'profile_have': profile_have,
         }
     
     return render(request, 'orgApp/selfOrg.html',context=context)
@@ -106,3 +107,19 @@ def load_thana(request):
     thana = Thana.objects.filter(district=district_id).order_by('name')
     print(thana)
     return render(request, 'orgApp/thana_dropdown_list_options.html', {'thana': thana})
+
+def org_project_create_view(request: HttpRequest):
+    template_name = "orgApp/org_project_create.html"
+    if request.method == 'GET':
+        project_main_form = forms.OrgProjectMainRegForm()
+        context = {'form': project_main_form}
+        return render(request, template_name, context)
+    elif request.method == 'POST':
+        project_main_form = forms.OrgProjectMainRegForm(data=request.POST)
+        if project_main_form.is_valid():
+            project_main_form.save()
+            messages.add_message(request, messages.SUCCESS, "Project added successfully!!")
+        else:
+            messages.add_message(request, messages.ERROR, "Please correct those errors!!")
+        return HttpResponsePermanentRedirect(reverse('orgApplication:org-project-create'))
+
