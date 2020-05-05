@@ -13,7 +13,7 @@ from django.core.paginator import Paginator
 # Create your views here.
 
 def home(request):
-    
+
     total_org_list = Organisation.objects.filter(status=True).count()
     divisions = City.objects.all().order_by('name')
     districts = District.objects.all().order_by('name')
