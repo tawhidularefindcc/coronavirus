@@ -19,6 +19,7 @@ def home(request):
     districts = District.objects.all().order_by('name')
     thanas = Thana.objects.all().order_by('name')
     context = {}
+    all_org_page_obj = None
     if total_org_list > 0:
         all_org = Organisation.objects.filter(status=True).order_by('name')
         paginator = Paginator(all_org, 1) # Show 25 contacts per page.
